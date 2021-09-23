@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<!--
+	Hello!
+	This project was designed by the digital studio territorio indefinido (www.territorioindefinido.com)
+	for the Centro de Cultura Digital in Mexico City in 2021.
+	-->
+	<title>The Transborder Immigrant Tool</title>
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<meta content="Transborder Immigrant Tool Online Archive" property="og:title">
+	<meta content="archive" property="og:type">
+	<meta content="summary" name="twitter:card">
+	<meta content="This archive gathers the audio files and poems of The Transborder Immigrant Tool (TBT), a project that used repurposed/reprogrammed inexpensive used mobile phones with GPS antennas to provide emergency personal navigation to migrants crossing the Mexico-U.S. border." property="og:description">
+	<meta content="assets/social.jpg" property="og:image">
+	<link href="style.css" rel="stylesheet">
+	<link href="assets/plyr.css" rel="stylesheet">
+	<script src="assets/typed.2.0.12.js"></script>
+	<script src="assets/jquery.min.js"></script>
+	<script src="assets/plyr.js"></script>
+	<script src="assets/html5media.min.js"></script>
+</head>
+<body>
+	<div id="container">
+		<div id="launcher">
+			<img src="assets/phone.png">LAUNCH TBT APPLICATION<span class="blink">_</span>
+		</div>
+		<div id="window">
+			<div class="topbar">
+				<div class="topbartitle">
+					TBT — [ <a href="index.html">español</a> ]
+				</div>
+				<div class="topbarclose" id="windowclose">
+					<div class="onex">
+						<div class="twox"></div>
+					</div>
+				</div>
+			</div>
+			<div id="windowcontent">
+				<div class="alert">
+					<div class="topbar">
+						<div class="topbarclose" id="alertclose">
+							<div class="onex">
+								<div class="twox"></div>
+							</div>
+						</div>
+					</div>
+					<p>The Transborder Immigrant Tool (TBT) is a last mile safety device designed by Electronic Disturbance Theater 2.0/b.a.n.g. lab to aid migrants crossing the Mexico-U.S. Border's harsh desert environments. Explore the audio and poetry archives of the TBT in different algorithmic modalities by clicking any of the icons below.</p>
+				</div>
+				<div class="icon" id="routeopen">
+					<img alt="hiker" src="assets/hiker.png">
+					<p>Follow a Route</p>
+				</div>
+				<div class="icon" id="exploreopen">
+					<img alt="cactus" src="assets/cactus.png">
+					<p>Explore La Frontera</p>
+				</div>
+				<div class="icon" id="poemsopen">
+					<img alt="files" src="assets/poems.png">
+					<p>Read Poems</p>
+				</div>
+				<div class="icon" id="filesopen">
+					<img alt="files" src="assets/sound.png">
+					<p>File Browser</p>
+				</div>
+				<div class="icon" id="playlistopen">
+					<img alt="hiker" src="assets/server.png">
+					<p>Audio Playlist</p>
+				</div>
+				<div class="icon" id="aboutopen">
+					<img alt="files" src="assets/question.png">
+					<p>About This Archive</p>
+				</div>
+
+				<!--- ABOUT WINDOW --->
+
+				<div class="about">
+					<div class="topbar">
+						<div class="topbartitle">
+							About This Archive
+						</div>
+						<div class="topbarclose" id="aboutclose">
+							<div class="onex">
+								<div class="twox"></div>
+							</div>
+						</div>
+					</div>
+					<div class="contained">
+						<div class="abouttext">
+							<img src="assets/tbt.gif">
+							<p>This archive gathers the audio files and poems of The Transborder Immigrant Tool (TBT), a project that used repurposed/reprogrammed inexpensive used mobile phones with GPS antennas to provide emergency personal navigation to migrants crossing the Mexico-U.S. border, using a "Geo Poetic System" to guide them to desert water safety sites set up by activists and to provide poetic audio nourishment. The audio includes materials in Spanish, Nahuatl, and English.</p>
+							<p>The project was developed by the Electronic Disturbance Theater 2.0 (Ricardo Dominguez, Brett Stalbaum, Amy Sara Carroll, Micha Cárdenas, Elle Mehrmand) in 2007, aiming to address the public safety issues created by United States' duplicitous immigration policies. The project’s interactive platform was developed and tested in southern California’s Anza-Borrego Desert State Park from 2009 to 2012.</p>
+							<p>This archive was designed by the digital studio <a href="https://www.territorioindefinido.com/" target="_blank">territorio indefinido</a> for the <a href="https://centroculturadigital.mx/" target="_blank">Centro de Cultura Digital</a> in Mexico City in 2021.</p>
+						</div>
+					</div>
+				</div>
+
+				<!--- POEMS WINDOW --->
+
+				<div class="poems">
+					<div class="topbar">
+						<div class="topbartitle">
+							Read Poems
+						</div>
+						<div class="topbarclose" id="poemsclose">
+							<div class="onex">
+								<div class="twox"></div>
+							</div>
+						</div>
+					</div>
+					<div class="contained">
+						<div class="poemshere" id="poemshere">
+							<div id="poembuttonhere"></div>
+							<div class="poemstypedhere"></div>
+						</div>
+					</div>
+				</div>
+
+				<!--- FOLLOW ROUTE WINDOW --->
+
+				<div class="routes">
+					<div class="topbar">
+						<div class="topbartitle">
+							Follow a Route
+						</div>
+						<div class="topbarclose" id="routesclose">
+							<div class="onex">
+								<div class="twox"></div>
+							</div>
+						</div>
+					</div>
+					<div class="contained">
+						<div id="routehere"></div>
+					</div>
+				</div>
+
+				<!--- AUDIO FILE EXPLORER WINDOW --->
+
+				<div class="files">
+					<div class="topbar">
+						<div class="topbartitle">
+							File Browser
+						</div>
+						<div class="topbarclose" id="filesclose">
+							<div class="onex">
+								<div class="twox"></div>
+							</div>
+						</div>
+					</div>
+					<div class="contained">
+						<div class="filelist"></div>
+					</div>
+				</div>
+
+				<!--- EXPLORE DESERT WINDOW --->
+
+				<div class="explore">
+					<div class="topbar">
+						<div class="topbartitle">
+							Explore La Frontera
+						</div>
+						<div class="topbarclose" id="exploreclose">
+							<div class="onex">
+								<div class="twox"></div>
+							</div>
+						</div>
+					</div>
+					<div class="contained">
+						<div id="desertwrap">
+							<div class="desert"></div>
+						</div>
+					</div>
+				</div>
+
+				<!--- AUDIO PLAYLIST WINDOW --->
+
+				<div class="playlist">
+					<div class="topbar">
+						<div class="topbartitle">
+							Audio Playlist
+						</div>
+						<div class="topbarclose" id="playlistclose">
+							<div class="onex">
+								<div class="twox"></div>
+							</div>
+						</div>
+					</div>
+					<div class="contained">
+						<div id="nowPlay">
+							<span id="npAction">Paused...</span><span id="npTitle"></span>
+						</div>
+						<div id="audiowrap">
+							<div id="audio0">
+								<audio controls="" id="audio1" preload="">Your browser does not support HTML5 Audio! 😢</audio>
+							</div>
+							<div id="tracks">
+								<a id="btnPrev">Previous</a><a id="btnNext">Next</a>
+							</div>
+						</div>
+						<div id="plwrap">
+							<ul id="plList"></ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<script>
+
+/* TYPING ANIMATION */
+
+var typed = new Typed('.poemstypedhere', {
+  strings: [
+		'The desert is an ecosystem with a logic of sustainability, of orientation, unique unto itself. For example, if the barrel cactus—known otherwise as the compass cactus—stockpiles moisture, it also affords direction. As clear as an arrow or a constellation, it leans south. Orient yourself by this mainstay or by flowering plants that, growing toward the sun, face south in the Northern Hemisphere.',
+		'Climb or walk in the morning. Rest midday beneath creosote bush or mesquite, insulating yourself from the superheated ground. Remember—even the sidewinder hovercrafts, the bulk of its body above the scalding sand as it leaves its trademark J-shaped tracks across the desert dunes.',
+		'Just before sunrise, Bedouins turned over half-buried stones in the desert to catch the dew that the night’s coolness had condensed on the stones’ surfaces. Indigenous travelers in the Mexican-U.S. corridor searched the broad leaves of yucca and agave. Rainwater collected at each plant’s base—the leaves’ apex—remaining there up to a few days after a summer or winter shower. Proceed from the simple premise: The desert caches water in unlikely places that it resists divulging. Do not expend all your energies searching for its secret stashes, but likewise do not assume that its pockets of moisture are nonexistent. Restrict your water reconnaissance to early or late in the day when your liquid net-gain will outweigh the perspiration you expend. A thirst is seldom quenched; it morphs to reappear on the horizon. Meanwhile, the desert reflects the sun back like a mirror. You are caught in that pair’s uneven, inconsummate exchange.',
+		'U.S. Marine Corps pilot Lieutenant Edwin Zolnier’s plane crash-landed in the Sonoran Desert. Rescued five days later, Zolnier credited the barrel cactus with keeping him alive. Technically you can survive on moisture from select cacti, but you have to recognize the difference between the tenable and the untenable. Some cacti’s sap and pulp are so toxic you will need to be hospitalized afterward if you drink or eat them. Other cacti won’t kill you, but will leave you sick as a dog. Baseline rule: Only take the risk of eating or drinking cacti if the alternative you face is dying of thirst. Saguaro and organ poison. Punto. And, not all barrel cacti are created equal. To make matters worse, young saguaros easily could be mistaken for barrels. So, don’t just look for squat, rounded cacti; differentiate, think fishhook. J-shaped, outer “fishhook” spines, literally used by the Seri Indians for fishing, mark and distinguish the true rescue cactus from its peers. When you’ve found the right plant, cut off its top with a knife or sharp rock but, don’t expect to find a font of liquid. Center yourself, cut out a chunk of the whitish inner pulp from the cactus’ correspondent center. Chew it. Let the juice run down your throat. Spit out the pulp when you’ve sucked it dry. Don’t swallow the pithy fiber. Rest, digest. (Exertion after eating could cause you to forfeit the little you gained in the process.) If the taste of the juice makes you gag, place the pulp in literal or makeshift shade (e.g., shield it for a short time with your body). Cooler by even a few degrees, its liquid still will taste super-concentrated, more “vegetal” than most vegetables palatable to human beings, but it might be easier to choke down.',
+		'You can survive without eating anything for three weeks in hot weather. But, the body’s need for hydration is a different matter entirely. Consume the fruit of prickly pear, saguaro, organ pipe, yucca, or cholla for their moisture alone.',
+		'In the summertime, pitahaya dulce, the fruit of the organ pipe cactus, ripens to red and drops its spines. The prickly pear cactus’ tuna reddens to purple, but never loses its needles. Dethorned, dethroned, both are delectably edible. Peel their skins.',
+		'In matters of life or death, most would contend, “Taste is relative.” (Such is the fate of poetry as artifice, art, or sustenance—a non-issue if one cannot drink, eat, or breathe, even if “poetry is not a luxury.”) Still, the taste of cacti presents a particularly thorny conundrum. Not yet mezcal or tequila, many cacti hold moisture, but also harbor toxins. Again, the baseline rule: Only take the risk of eating or drinking cacti if the alternative is dying of thirst. Test, test, test. The fishhook barrel is perhaps your best bet, but make sure you can identify it positively before ingesting its contents. If you’re not sure you’ve found the right plant, put a small portion of its pulp in your mouth, taste it before you swallow its sap. Expect the flavor of super-saturated vegetables. Spit out anything that is acrid, bitter, or so unsavory that it makes you feel as if you will choke uncontrollably or vomit. Wait approximately thirty minutes to gauge your body’s tolerance of this experiment—better to stay thirsty within arm’s reach of noxious saguaro than poison yourself or speed up your stages of dehydration. ¡Ánimo! A landscape that sustains the saguaro is equally amenable to the fishhook barrel.',
+		'Cottonwoods spread a welcome—shade. Clusters also indicate a desert stream or an underground spring close to the surface. Cut the tracks of animals. Walk in the footprints of coyote or fox to the freshest water available. Flies and mosquitoes rarely move far from a source. Javelina divine permanence, traveling in the corridors of washes. The flight paths of birds, like pigeons and doves, indicate the proximity of an oasis. They drink in the evenings. If they are flying low and slow, follow their direction. Where they came from may be where you need to go to refill bottles or canteens.',
+		'According to Herodotus, King Cambyses, twenty-five hundred years ago, lost his entire Persian army (fifty thousand men) in an Egyptian sandstorm. Deserts guard their secrets; no archaeological evidence corroborates Herodotus’s account. Sudden, local haboobs—sometimes the result of thunderstorms’ cool air outflows—still menace desert travelers. Instruments in the Mojave Desert have clocked wind speeds up to one hundred sixty kilometers per hour. In a sand or dust storm, heat suffocates; winds transubstantiate the landscape into unidentified flying objects. Sand becomes sandpaper against the skin. Turn your back to the wind. Lie on your side against a hill or dune. Wrap your face. Cover your nose and mouth. Tuck your eyeglasses into your shirt or jacket pocket (so the wind will not etch its soliloquies into them). Wait it out. No Godot, a sandstorm will go the way of a temper tantrum.',
+		'Africanized honey bees (AHB) present a formidable challenge to anyone traveling the Americas. Other bees might circle a person, but would refrain from stinging him or her without provocation. Sweat bees, for instance, will land on a hand to drink their fill of perspiration. Left to their own devices, they will not attack, but will fly away when they’re satiated. But, “killer,” or “assassin bees,” the descendants of migrants (themselves the descendants of twenty-six Tanzanian bees accidentally released in southeast Brazil), are aggressively territorial. Almost identical in appearance to kinder and gentler bee populations, Africanized bees—now the reigning queens and workers of the Sonoran Desert—congregate near water holes and flowering cacti. Killer bees will defend their hives against perceived threats, attacking by the thousands. Do not pass within thirty meters of their colonies (eminent domains), constructed in veritable earthworks (mounds and cavities), cacti trunks, creosote, mesquite, former travelers’ lay-up sites. (They’ve even been known to nest beneath the lids of water cache barrels!) If you see large numbers of bees’ patrolling or hear their drone, move on. Killer bees read dark or bright colors—clothing or hair—as the sign of a predator. If AHBs swarm, do not wave your arms or swat their bodies. Run! Or, wrap yourself tightly in a blanket. Africanized bees motion-detect enemies, measure the latter’s expelled carbon monoxide. Your first priority must be to protect your face (swelling of the mouth and nose inhibits breathing). If stung, find a safe space. Then, use your fingers, an earring, a shard of granite to remove stingers and venom sacks lodged beneath the skin (otherwise, even those fragments will keep pumping venom into you).',
+		'Female tarantulas line their burrows with silk. Enterprising, they swing their elaborately webbed entrances open at night to spring on guileless insects nearby. Although some South Texans contend that nocturnal mass exoduses of tarantulas are the dead rising from their graves; in fact, male tarantulas, mildly venomous, routinely venture forth at dusk. If they cross your path, live and let live. Otherwise, these book-lunged arachnids will bite or flick you off, blowing hairs from their bellies into the air. Like slivers, their missives will enter your skin, provoking gradations of irritation (itching, swelling, raised reddish bumps). Worse yet, if their hairs float like spores into your eyes, expect a reaction comparable to that induced by pepper spray or tear gas. It will pass, but consider, in Italy, many once believed that the only cure for a tarantula’s bite or shedding was the dance now known as the tarantella.',
+		'Western Diamondbacks—light to medium brown (liable to reach a length of two meters)—densely populate North American deserts. Most often found in brushy washes and shady recesses, in the springtime, they emerge from hibernation, blooming like flowers. At this, their venomous peak, they sunbathe, flashing their diamond-shaped patches. Their prey of choice: mice and kangaroo rats. Diamondbacks hold a dubious record—the majority of the continent’s snakebite cases. Listen for their rattle. Look for the shallow circular marks they leave in locations where they’ve coiled up to sleep. Diamondbacks, too, are creatures of habit, returning to rest stops. Poisonous snakes fall into two categories (dependent upon their venom). Diamondbacks pack a hemotoxic punch, albeit not as concentrated as that of some snakes. They make up for this supposed lack in their powerful mode of delivery, injecting large quantities of venom with single surgical strikes. Hemotoxins flood the bloodstream, destroy blood cells, damage tissue, catalyze internal hemorrhaging. Yes, reactions to snakebites vary. But, if you are bit by a diamondback—especially in March or April—within three minutes the area around the wound will redden and swell. And, left untreated, your body will not deviate from a well-rehearsed script: massive swelling and blistering, a steady lowering of blood pressure, headache, severe pain, blood in the urine. Do not block circulation or make incisions to the wound. Do not take painkillers or sedatives. Do not eat. Remove all clothing and jewelry beneath the area. Remain motionless; keep the bite below your heart. Ideally, get someone else to cleanse the wound. And, most importantly—borders be damned—call 9-1-1 or 0-6-6; seek medical attention immediately.',
+		'For most, the bite of the translucent yellow and brown-striped Arizona bark scorpion is not lethal. Scorpions, night-walkers, seek cool, dark, moist hiding places during the day. If you are stung by a scorpion, clean the wound; do not eat anything for eight hours. It is possible for you to recover. In contrast, a brown recluse spider’s bite is literally “a force of nature.” Expect chills, fever, nausea, vomiting, rashes, hives, an ulcer that will continue to grow in size unless the wound is excised and medically treated. Found in dead wood and debris, the brown recluse carries a dark, violin-shaped trademark on its back.',
+		'Heat cramps, relatively mild, signal dehydration and loss of sodium. Drink water, rest in the shade, seek water at twilight. Heat illness is an injury whose symptoms include fatigue, dizziness, fainting, nausea, vomiting. Redux: Drink water, rest in the shade, seek water at twilight. Heat exhaustion produces sweating, clammy skin, increased pulse and respiration rate, weakness, more fainting, nausea and vomiting. STOP. The choices you make from now on will dictate whether you live or die. Heatstroke happens when a person pushes on despite heat exhaustion. Trauma ensues—physical collapse, loss of consciousness, rapid pulse and respiration, a skyrocketing body temperature, severe disorientation, impaired motor skills, involuntary urination, dilated pupils. As heatstroke progresses, you will experience chest and arm pain, convulse, go into a coma. You will not be equipped to deal with these symptoms as they present themselves. Call 9-1-1 or 0-6-6 beforehand.',
+		'Cholla, or jumping cactus, attaches. A bud of spines breaks off at the slightest hint of touch. Remove cholla from your skin and clothing in increments, with a rock, a stick, a knife: the bud... large spines left behind... small spines or glochids. Needling needles that remain will work themselves out in the days ahead.',
+		'Arborescent monocot. “Mothers of the Disappeared.” “I Still Haven’t Found What I’m Looking For.” “Bullet the Blue Sky”: “Put El Salvador through an amplifier.” Seldom free-standing (Mexican as the Irish in the United States), the Joshua tree sends out yellow-green flowers—like flares—in the spring. Mormons referred to the trees—actually shrubs—as “praying plants.” Anthropomorphizing each’s branches, they compared the largest of the yucca evergreens to the Old Testament prophet Joshua as he pointed toward the promised land. Use the Joshua tree’s lightweight wood to splint broken limbs. Chew the plant’s roots for the steroid-like compound released (in cases of allergic reaction or swelling).',
+		'An antioxidant, an anti-inflammatory medication, the ubiquitous creosote bush rejuvenates itself via a cloning process. With a life span upwards of 9,000 years, it is esteemed by the Tohono O’odham to be the oldest living thing on earth. Ten years after a 1962 Nevada thermonuclear explosion destroyed twenty-one creosote bushes, twenty re-sprouted as if to protest, “We will not be moved.” Hiroshima mon amour— no ghosts, no burns, no shadows. The creosote bush simply grows—a survival artist.',
+		'Approach rocky trails with caution, especially in the dark or after a thunderstorm. Falls from steep slopes represent the second leading cause of injury and death in the desert (the first being dehydration). Sacrifice momentum for surer footing. Learn to read the terrain: Anticipate loose rock and gravel. Scramble by way of larger, less mobile boulders. Choose routes with anchoring patches of vegetation. Realize that descent, like dissent, is always more dangerous than ascent. Use a walking stick to test what lies ahead. With others, travel at an angle; avoid walking directly below someone else on steep slopes. (Otherwise, expect what that person knocks loose to impact you). Like rocky trails, desert dunes are walkable. Learn to read this terrain, too. Traverse dune desert arrhythmically—Fremen-style. Eschew dunes’ angled leeward bases. Hike their hallowed hollows in between, keeping a lookout for small holes (that mark tunnels) and conical depressions of silt. Or, stay high on the dunes’ surreal slopes of coarser, tightly packed sand particles. Peaks provide stability if you resist repeating the dunes’ rhythm—a movement, like breath, that rises and falls.',
+		'Thunderstorms, a release, might sound like a relief to the overheated and thirsty. But, torrential rains, ordinary from May to September in Mexico City, can be as deadly as the unblinking, blinder-free sun in the Sonoran and Chihuahuan Deserts. (Each aguacero, a ground zero.) Within minutes, drainage upstream comes down like a wall of water and debris. Flash floods, mudslides, monsoons swallow. Low-lying washes, arroyos, canyons overflow. Air temperatures—like kites—nosedive. As storm clouds gather, seek higher ground, avoiding tall cacti and trees, hilltops and ridgelines. Lightning, always the avant-garde, precedes downpours. When the waters recede, criss-cross their artistry—patterns in the sand, sculpted as a topographic map or an open book in Braille.',
+		'The desert cold also kills. Unpredictable winter weather includes ice, sleet, hail, and snow. In an ideal world, you’d carry a wind- and waterproof jacket with you. In a less-than-ideal world, use large boulders and rock formations as windbreaks. They retain the sun’s heat for hours. Don’t lie down on the sandy ground or dig shallow holes into it. Faster than air, sand—a heat sink—will drain warmth, like a liquid, from your body.',
+		'Do not panic. Do not panic. If you are too tired or disoriented to continue, realize that you probably will not be thinking clearly. Heat scrambles the brain like eggs. “It is perfectly noble to come out of a pose.” Know your own limitations. Turn your phone on. Search for a signal. (Walk only if you are not in range. Then, power the phone down to save the battery life to save your own. Walk, retest. Walk, retest, until you secure reception.) Call 9-1-1 or 0-6-6. Reason—it’s better to live to cross the desert tomorrow than to let the desert cross you today.',
+		'Keep your body as covered as comfort permits. Sunburn not only inhibits travel, it can aggravate, accelerate heat exhaustion and heatstroke. Sand and rock reflect warmth and light as if you were walking on a metallic liquid or “ashes of time.” (Protect your eyes from sun blindness, too!) Keep clothing, loose-fitting, light in weight and color. Think drab—tan, off-white, khaki, olive. Think controlled evaporation (clothing regulates). If presented with the opportunity, soak your shirt in water that’s too dirty to drink. The sight or smell of you afterward might be unsavory, but damp clothing will slow down your rate of perspiration. The key here being conservation—conserve your resources whenever possible.',
+		'Ultimately, many would argue that nature sets the standard for neutrality. Unlike human beings, nature maintains no allegiances to nation, family, business, religion. You already know that the greatest danger you face in the desert may not be the climate or the terrain. Some will not have your best interests in mind. Rescue workers pledge to offer assistance to those in need; hold them to that promise. Trust no one else who’s a stranger with your life.',
+		'When everything—including this cell phone—fails, build a signal fire in dirt or sand, away from brush and trees. Use dead cacti and mesquite. A fire in the shape of an “X”—the international symbol of distress—needs no translation.',
+		'Two hours either side of noon, insert a stick (one meter long) into the ground. Mark the tip of the shadow it casts with a stone. Wait twenty minutes. Mark its second shadow with another stone. Draw a straight line from the first stone to the second, extending the line two additional meters. This is your west to east axis. Draw a perpendicular line that crosses its center. Stand at the lines’ intersection. Keep west to your left to face true north. Pick a visible landmark in line with that orientation. Walk to that landmark; repeat this exercise.',
+		'At night, look for the Big Dipper. Note the two stars that form its outer edge. Imagine a line from those stars to a point about five times the distance between them. You should find Polaris, the North Star, waiting for you there (the end of the Little Dipper’s handle). Imagine a straight line between Polaris and the horizon. This is your second true north bearing.'
+	],
+	typeSpeed: 40,
+	backSpeed: 5,
+	shuffle: true,
+	smartBackspace: false,
+	loop: true,
+	showCursor: false,
+	onStringTyped: (arrayPos, self) => {
+		typed.stop();
+		var dir = document.createElement("button");
+		dir.classList.add("newpoembutton");
+		dir.onclick = function() {$(".newpoembutton").remove();typed.start();};
+		dir.innerHTML = 'Read Another Poem'
+		document.getElementById('poembuttonhere').appendChild(dir);
+		$(".newpoembutton").fadeIn(500);
+	},
+});
+
+typed.stop();
+
+/* AUDIO ARRAY */
+
+var src = [
+	"audio320/59ENGLISHanna.mp3",
+	"audio320/60ENGLISH-KATIE.mp3",
+	"audio320/60SpanishNatasha.mp3",
+	"audio320/61ENGLISHamy.mp3",
+	"audio320/61SpanishNatasha.mp3",
+	"audio320/62EnglishNatasha.mp3",
+	"audio320/62SpanishNatasha.mp3",
+	"audio320/63ENGLISHamy.mp3",
+	"audio320/63SPANISHelizabeth.mp3",
+	"audio320/64ENGLISH-ZE.mp3",
+	"audio320/64ESPAN_Ricardo.mp3",
+	"audio320/65ENGLISH-CYNTHIA.mp3",
+	"audio320/65SPAN-CYNTHIA.mp3",
+	"audio320/66ENGLISH-IVAN.mp3",
+	"audio320/66SPAN-IVAN.mp3",
+	"audio320/67ENGLISHamy.mp3",
+	"audio320/67SPANISHivan.mp3",
+	"audio320/68EnglishNatashas.mp3",
+	"audio320/68SpanishNatasha.mp3",
+	"audio320/70_1SPANISHelizabeth.mp3",
+	"audio320/71SPAN-MARIA.mp3",
+	"audio320/72_1ENGLISHamy.mp3",
+	"audio320/Al-Khwarizmi-English-hq.mp3",
+	"audio320/Code-Micha-hq.mp3",
+	"audio320/Da-Sein-hq.mp3",
+	"audio320/Digamos-so-say-we-all-hq.mp3",
+	"audio320/ds-1-english-hq.mp3",
+	"audio320/ds-2-spanish-hq.mp3",
+	"audio320/DS-3-Spanish-hq.mp3",
+	"audio320/DS-5-Spanish.mp3",
+	"audio320/Dubliners-hq-1.mp3",
+	"audio320/Eucalyptus-hq.mp3",
+	"audio320/Grace-Ace-hq-1.mp3",
+	"audio320/I-like-America-hq.mp3",
+	"audio320/Poema1.mp3",
+	"audio320/Poema2.mp3",
+	"audio320/Poema3.mp3",
+	"audio320/Poema4.mp3",
+	"audio320/Poema5.mp3",
+	"audio320/Poema6.mp3",
+	"audio320/Poema7.mp3",
+	"audio320/Poema8.mp3",
+	"audio320/Poema9.mp3",
+	"audio320/Poema10.mp3",
+	"audio320/Poema11.mp3",
+	"audio320/Poema12.mp3",
+	"audio320/Poema13.mp3",
+	"audio320/Poema14.mp3",
+	"audio320/Poema15.mp3",
+	"audio320/Poema16.mp3",
+	"audio320/Poema17.mp3",
+	"audio320/Poema18.mp3",
+	"audio320/Poema19.mp3",
+	"audio320/Poema20.mp3",
+	"audio320/Poema21.mp3",
+	"audio320/Poema22.mp3",
+	"audio320/Poema23.mp3",
+	"audio320/Poema24I.mp3",
+	"audio320/Poema24II.mp3",
+	"audio320/TBT-44-45-Nahuatl.mp3",
+	"audio320/TBT-46-Nahuatl.mp3",
+	"audio320/TBT-47-Nahuatl.mp3",
+	"audio320/TBT-48-Nahuatl.mp3",
+	"audio320/TBT-49-Nahuatl.mp3",
+	"audio320/TBT-50-Nahuatl.mp3",
+	"audio320/TBT-51-Nahuatl.mp3",
+	"audio320/TBT-52-Nahuatl.mp3",
+	"audio320/TBT-53-54_all_Nahuatl.mp3",
+	"audio320/TBT-53-54-1of3-Nahuatl.mp3",
+	"audio320/TBT-53-54-2of3-Nahuatl.mp3",
+	"audio320/TBT-53-54-3of3-Nahuatl.mp3",
+	"audio320/TBT-55-Nahuatl.mp3",
+	"audio320/TBT-56-1of3-Nahuatl.mp3",
+	"audio320/TBT-56-2of3-Nahuatl.mp3",
+	"audio320/TBT-56-3of3-Nahuatl.mp3",
+	"audio320/TBT-56-Nahuatl_three.mp3",
+	"audio320/TBT-57-Nahuatl.mp3",
+	"audio320/TBT-58-Nahuatl.mp3",
+	"audio320/TBT-59-Nahuatl.mp3",
+	"audio320/TBT-60-Nahuatl.mp3",
+	"audio320/TBT-61-Nahuatl.mp3",
+	"audio320/TBT-62-1of2-Nahuatl_2.mp3",
+	"audio320/TBT-62-1of2-Nahuatl.mp3",
+	"audio320/TBT-62-2of2-Nahuatl.mp3",
+	"audio320/TBT-63-1of2-Nahuatl_1.mp3",
+	"audio320/TBT-63-1of2-Nahuatl.mp3",
+	"audio320/TBT-63-2of2-Nahuatl.mp3",
+	"audio320/TBT-63-Nahuatl_both.mp3",
+	"audio320/TBT-64-Nahuatl.mp3",
+	"audio320/TBT-65-Nahuatl.mp3",
+	"audio320/TBT-66-Nahuatl.mp3",
+	"audio320/TBT-67-Nahuatl.mp3",
+	"audio320/TBT-69-Nahuatl.mp3",
+	"audio320/TBT-70-1of2-Nahuatl_both.mp3",
+	"audio320/TBT-70-1of2-Nahuatl.mp3",
+	"audio320/TBT-70-2of2-Nahuatl.mp3",
+	"audio320/TBT-71-Nahuatl.mp3",
+	"audio320/TBT-SOUNDSCAPE_OG.mp3",
+];
+
+/* POETRY ARRAY */
+
+var poems = [
+  'The desert is an ecosystem with a logic of sustainability, of orientation, unique unto itself. For example, if the barrel cactus—known otherwise as the compass cactus—stockpiles moisture, it also affords direction. As clear as an arrow or a constellation, it leans south. Orient yourself by this mainstay or by flowering plants that, growing toward the sun, face south in the Northern Hemisphere.',
+  'Climb or walk in the morning. Rest midday beneath creosote bush or mesquite, insulating yourself from the superheated ground. Remember—even the sidewinder hovercrafts, the bulk of its body above the scalding sand as it leaves its trademark J-shaped tracks across the desert dunes.',
+  'Just before sunrise, Bedouins turned over half-buried stones in the desert to catch the dew that the night’s coolness had condensed on the stones’ surfaces. Indigenous travelers in the Mexican-U.S. corridor searched the broad leaves of yucca and agave. Rainwater collected at each plant’s base—the leaves’ apex—remaining there up to a few days after a summer or winter shower. Proceed from the simple premise: The desert caches water in unlikely places that it resists divulging. Do not expend all your energies searching for its secret stashes, but likewise do not assume that its pockets of moisture are nonexistent. Restrict your water reconnaissance to early or late in the day when your liquid net-gain will outweigh the perspiration you expend. A thirst is seldom quenched; it morphs to reappear on the horizon. Meanwhile, the desert reflects the sun back like a mirror. You are caught in that pair’s uneven, inconsummate exchange.',
+  'U.S. Marine Corps pilot Lieutenant Edwin Zolnier’s plane crash-landed in the Sonoran Desert. Rescued five days later, Zolnier credited the barrel cactus with keeping him alive. Technically you can survive on moisture from select cacti, but you have to recognize the difference between the tenable and the untenable. Some cacti’s sap and pulp are so toxic you will need to be hospitalized afterward if you drink or eat them. Other cacti won’t kill you, but will leave you sick as a dog. Baseline rule: Only take the risk of eating or drinking cacti if the alternative you face is dying of thirst. Saguaro and organ poison. Punto. And, not all barrel cacti are created equal. To make matters worse, young saguaros easily could be mistaken for barrels. So, don’t just look for squat, rounded cacti; differentiate, think fishhook. J-shaped, outer “fishhook” spines, literally used by the Seri Indians for fishing, mark and distinguish the true rescue cactus from its peers. When you’ve found the right plant, cut off its top with a knife or sharp rock but, don’t expect to find a font of liquid. Center yourself, cut out a chunk of the whitish inner pulp from the cactus’ correspondent center. Chew it. Let the juice run down your throat. Spit out the pulp when you’ve sucked it dry. Don’t swallow the pithy fiber. Rest, digest. (Exertion after eating could cause you to forfeit the little you gained in the process.) If the taste of the juice makes you gag, place the pulp in literal or makeshift shade (e.g., shield it for a short time with your body). Cooler by even a few degrees, its liquid still will taste super-concentrated, more “vegetal” than most vegetables palatable to human beings, but it might be easier to choke down.',
+  'You can survive without eating anything for three weeks in hot weather. But, the body’s need for hydration is a different matter entirely. Consume the fruit of prickly pear, saguaro, organ pipe, yucca, or cholla for their moisture alone.',
+  'In the summertime, pitahaya dulce, the fruit of the organ pipe cactus, ripens to red and drops its spines. The prickly pear cactus’ tuna reddens to purple, but never loses its needles. Dethorned, dethroned, both are delectably edible. Peel their skins.',
+  'In matters of life or death, most would contend, “Taste is relative.” (Such is the fate of poetry as artifice, art, or sustenance—a non-issue if one cannot drink, eat, or breathe, even if “poetry is not a luxury.”) Still, the taste of cacti presents a particularly thorny conundrum. Not yet mezcal or tequila, many cacti hold moisture, but also harbor toxins. Again, the baseline rule: Only take the risk of eating or drinking cacti if the alternative is dying of thirst. Test, test, test. The fishhook barrel is perhaps your best bet, but make sure you can identify it positively before ingesting its contents. If you’re not sure you’ve found the right plant, put a small portion of its pulp in your mouth, taste it before you swallow its sap. Expect the flavor of super-saturated vegetables. Spit out anything that is acrid, bitter, or so unsavory that it makes you feel as if you will choke uncontrollably or vomit. Wait approximately thirty minutes to gauge your body’s tolerance of this experiment—better to stay thirsty within arm’s reach of noxious saguaro than poison yourself or speed up your stages of dehydration. ¡Ánimo! A landscape that sustains the saguaro is equally amenable to the fishhook barrel.',
+  'Cottonwoods spread a welcome—shade. Clusters also indicate a desert stream or an underground spring close to the surface. Cut the tracks of animals. Walk in the footprints of coyote or fox to the freshest water available. Flies and mosquitoes rarely move far from a source. Javelina divine permanence, traveling in the corridors of washes. The flight paths of birds, like pigeons and doves, indicate the proximity of an oasis. They drink in the evenings. If they are flying low and slow, follow their direction. Where they came from may be where you need to go to refill bottles or canteens.',
+  'According to Herodotus, King Cambyses, twenty-five hundred years ago, lost his entire Persian army (fifty thousand men) in an Egyptian sandstorm. Deserts guard their secrets; no archaeological evidence corroborates Herodotus’s account. Sudden, local haboobs—sometimes the result of thunderstorms’ cool air outflows—still menace desert travelers. Instruments in the Mojave Desert have clocked wind speeds up to one hundred sixty kilometers per hour. In a sand or dust storm, heat suffocates; winds transubstantiate the landscape into unidentified flying objects. Sand becomes sandpaper against the skin. Turn your back to the wind. Lie on your side against a hill or dune. Wrap your face. Cover your nose and mouth. Tuck your eyeglasses into your shirt or jacket pocket (so the wind will not etch its soliloquies into them). Wait it out. No Godot, a sandstorm will go the way of a temper tantrum.',
+  'Africanized honey bees (AHB) present a formidable challenge to anyone traveling the Americas. Other bees might circle a person, but would refrain from stinging him or her without provocation. Sweat bees, for instance, will land on a hand to drink their fill of perspiration. Left to their own devices, they will not attack, but will fly away when they’re satiated. But, “killer,” or “assassin bees,” the descendants of migrants (themselves the descendants of twenty-six Tanzanian bees accidentally released in southeast Brazil), are aggressively territorial. Almost identical in appearance to kinder and gentler bee populations, Africanized bees—now the reigning queens and workers of the Sonoran Desert—congregate near water holes and flowering cacti. Killer bees will defend their hives against perceived threats, attacking by the thousands. Do not pass within thirty meters of their colonies (eminent domains), constructed in veritable earthworks (mounds and cavities), cacti trunks, creosote, mesquite, former travelers’ lay-up sites. (They’ve even been known to nest beneath the lids of water cache barrels!) If you see large numbers of bees’ patrolling or hear their drone, move on. Killer bees read dark or bright colors—clothing or hair—as the sign of a predator. If AHBs swarm, do not wave your arms or swat their bodies. Run! Or, wrap yourself tightly in a blanket. Africanized bees motion-detect enemies, measure the latter’s expelled carbon monoxide. Your first priority must be to protect your face (swelling of the mouth and nose inhibits breathing). If stung, find a safe space. Then, use your fingers, an earring, a shard of granite to remove stingers and venom sacks lodged beneath the skin (otherwise, even those fragments will keep pumping venom into you).',
+  'Female tarantulas line their burrows with silk. Enterprising, they swing their elaborately webbed entrances open at night to spring on guileless insects nearby. Although some South Texans contend that nocturnal mass exoduses of tarantulas are the dead rising from their graves; in fact, male tarantulas, mildly venomous, routinely venture forth at dusk. If they cross your path, live and let live. Otherwise, these book-lunged arachnids will bite or flick you off, blowing hairs from their bellies into the air. Like slivers, their missives will enter your skin, provoking gradations of irritation (itching, swelling, raised reddish bumps). Worse yet, if their hairs float like spores into your eyes, expect a reaction comparable to that induced by pepper spray or tear gas. It will pass, but consider, in Italy, many once believed that the only cure for a tarantula’s bite or shedding was the dance now known as the tarantella.',
+  'Western Diamondbacks—light to medium brown (liable to reach a length of two meters)—densely populate North American deserts. Most often found in brushy washes and shady recesses, in the springtime, they emerge from hibernation, blooming like flowers. At this, their venomous peak, they sunbathe, flashing their diamond-shaped patches. Their prey of choice: mice and kangaroo rats. Diamondbacks hold a dubious record—the majority of the continent’s snakebite cases. Listen for their rattle. Look for the shallow circular marks they leave in locations where they’ve coiled up to sleep. Diamondbacks, too, are creatures of habit, returning to rest stops. Poisonous snakes fall into two categories (dependent upon their venom). Diamondbacks pack a hemotoxic punch, albeit not as concentrated as that of some snakes. They make up for this supposed lack in their powerful mode of delivery, injecting large quantities of venom with single surgical strikes. Hemotoxins flood the bloodstream, destroy blood cells, damage tissue, catalyze internal hemorrhaging. Yes, reactions to snakebites vary. But, if you are bit by a diamondback—especially in March or April—within three minutes the area around the wound will redden and swell. And, left untreated, your body will not deviate from a well-rehearsed script: massive swelling and blistering, a steady lowering of blood pressure, headache, severe pain, blood in the urine. Do not block circulation or make incisions to the wound. Do not take painkillers or sedatives. Do not eat. Remove all clothing and jewelry beneath the area. Remain motionless; keep the bite below your heart. Ideally, get someone else to cleanse the wound. And, most importantly—borders be damned—call 9-1-1 or 0-6-6; seek medical attention immediately.',
+  'For most, the bite of the translucent yellow and brown-striped Arizona bark scorpion is not lethal. Scorpions, night-walkers, seek cool, dark, moist hiding places during the day. If you are stung by a scorpion, clean the wound; do not eat anything for eight hours. It is possible for you to recover. In contrast, a brown recluse spider’s bite is literally “a force of nature.” Expect chills, fever, nausea, vomiting, rashes, hives, an ulcer that will continue to grow in size unless the wound is excised and medically treated. Found in dead wood and debris, the brown recluse carries a dark, violin-shaped trademark on its back.',
+  'Heat cramps, relatively mild, signal dehydration and loss of sodium. Drink water, rest in the shade, seek water at twilight. Heat illness is an injury whose symptoms include fatigue, dizziness, fainting, nausea, vomiting. Redux: Drink water, rest in the shade, seek water at twilight. Heat exhaustion produces sweating, clammy skin, increased pulse and respiration rate, weakness, more fainting, nausea and vomiting. STOP. The choices you make from now on will dictate whether you live or die. Heatstroke happens when a person pushes on despite heat exhaustion. Trauma ensues—physical collapse, loss of consciousness, rapid pulse and respiration, a skyrocketing body temperature, severe disorientation, impaired motor skills, involuntary urination, dilated pupils. As heatstroke progresses, you will experience chest and arm pain, convulse, go into a coma. You will not be equipped to deal with these symptoms as they present themselves. Call 9-1-1 or 0-6-6 beforehand.',
+  'Cholla, or jumping cactus, attaches. A bud of spines breaks off at the slightest hint of touch. Remove cholla from your skin and clothing in increments, with a rock, a stick, a knife: the bud... large spines left behind... small spines or glochids. Needling needles that remain will work themselves out in the days ahead.',
+  'Arborescent monocot. “Mothers of the Disappeared.” “I Still Haven’t Found What I’m Looking For.” “Bullet the Blue Sky”: “Put El Salvador through an amplifier.” Seldom free-standing (Mexican as the Irish in the United States), the Joshua tree sends out yellow-green flowers—like flares—in the spring. Mormons referred to the trees—actually shrubs—as “praying plants.” Anthropomorphizing each’s branches, they compared the largest of the yucca evergreens to the Old Testament prophet Joshua as he pointed toward the promised land. Use the Joshua tree’s lightweight wood to splint broken limbs. Chew the plant’s roots for the steroid-like compound released (in cases of allergic reaction or swelling).',
+  'An antioxidant, an anti-inflammatory medication, the ubiquitous creosote bush rejuvenates itself via a cloning process. With a life span upwards of 9,000 years, it is esteemed by the Tohono O’odham to be the oldest living thing on earth. Ten years after a 1962 Nevada thermonuclear explosion destroyed twenty-one creosote bushes, twenty re-sprouted as if to protest, “We will not be moved.” Hiroshima mon amour— no ghosts, no burns, no shadows. The creosote bush simply grows—a survival artist.',
+  'Approach rocky trails with caution, especially in the dark or after a thunderstorm. Falls from steep slopes represent the second leading cause of injury and death in the desert (the first being dehydration). Sacrifice momentum for surer footing. Learn to read the terrain: Anticipate loose rock and gravel. Scramble by way of larger, less mobile boulders. Choose routes with anchoring patches of vegetation. Realize that descent, like dissent, is always more dangerous than ascent. Use a walking stick to test what lies ahead. With others, travel at an angle; avoid walking directly below someone else on steep slopes. (Otherwise, expect what that person knocks loose to impact you). Like rocky trails, desert dunes are walkable. Learn to read this terrain, too. Traverse dune desert arrhythmically—Fremen-style. Eschew dunes’ angled leeward bases. Hike their hallowed hollows in between, keeping a lookout for small holes (that mark tunnels) and conical depressions of silt. Or, stay high on the dunes’ surreal slopes of coarser, tightly packed sand particles. Peaks provide stability if you resist repeating the dunes’ rhythm—a movement, like breath, that rises and falls.',
+  'Thunderstorms, a release, might sound like a relief to the overheated and thirsty. But, torrential rains, ordinary from May to September in Mexico City, can be as deadly as the unblinking, blinder-free sun in the Sonoran and Chihuahuan Deserts. (Each aguacero, a ground zero.) Within minutes, drainage upstream comes down like a wall of water and debris. Flash floods, mudslides, monsoons swallow. Low-lying washes, arroyos, canyons overflow. Air temperatures—like kites—nosedive. As storm clouds gather, seek higher ground, avoiding tall cacti and trees, hilltops and ridgelines. Lightning, always the avant-garde, precedes downpours. When the waters recede, criss-cross their artistry—patterns in the sand, sculpted as a topographic map or an open book in Braille.',
+  'The desert cold also kills. Unpredictable winter weather includes ice, sleet, hail, and snow. In an ideal world, you’d carry a wind- and waterproof jacket with you. In a less-than-ideal world, use large boulders and rock formations as windbreaks. They retain the sun’s heat for hours. Don’t lie down on the sandy ground or dig shallow holes into it. Faster than air, sand—a heat sink—will drain warmth, like a liquid, from your body.',
+  'Do not panic. Do not panic. If you are too tired or disoriented to continue, realize that you probably will not be thinking clearly. Heat scrambles the brain like eggs. “It is perfectly noble to come out of a pose.” Know your own limitations. Turn your phone on. Search for a signal. (Walk only if you are not in range. Then, power the phone down to save the battery life to save your own. Walk, retest. Walk, retest, until you secure reception.) Call 9-1-1 or 0-6-6. Reason—it’s better to live to cross the desert tomorrow than to let the desert cross you today.',
+  'Keep your body as covered as comfort permits. Sunburn not only inhibits travel, it can aggravate, accelerate heat exhaustion and heatstroke. Sand and rock reflect warmth and light as if you were walking on a metallic liquid or “ashes of time.” (Protect your eyes from sun blindness, too!) Keep clothing, loose-fitting, light in weight and color. Think drab—tan, off-white, khaki, olive. Think controlled evaporation (clothing regulates). If presented with the opportunity, soak your shirt in water that’s too dirty to drink. The sight or smell of you afterward might be unsavory, but damp clothing will slow down your rate of perspiration. The key here being conservation—conserve your resources whenever possible.',
+  'Ultimately, many would argue that nature sets the standard for neutrality. Unlike human beings, nature maintains no allegiances to nation, family, business, religion. You already know that the greatest danger you face in the desert may not be the climate or the terrain. Some will not have your best interests in mind. Rescue workers pledge to offer assistance to those in need; hold them to that promise. Trust no one else who’s a stranger with your life.',
+  'When everything—including this cell phone—fails, build a signal fire in dirt or sand, away from brush and trees. Use dead cacti and mesquite. A fire in the shape of an “X”—the international symbol of distress—needs no translation.',
+  'Two hours either side of noon, insert a stick (one meter long) into the ground. Mark the tip of the shadow it casts with a stone. Wait twenty minutes. Mark its second shadow with another stone. Draw a straight line from the first stone to the second, extending the line two additional meters. This is your west to east axis. Draw a perpendicular line that crosses its center. Stand at the lines’ intersection. Keep west to your left to face true north. Pick a visible landmark in line with that orientation. Walk to that landmark; repeat this exercise.',
+  'At night, look for the Big Dipper. Note the two stars that form its outer edge. Imagine a line from those stars to a point about five times the distance between them. You should find Polaris, the North Star, waiting for you there (the end of the Little Dipper’s handle). Imagine a straight line between Polaris and the horizon. This is your second true north bearing.'
+]
+
+var poemas = [
+  'El desierto es un ecosistema único en si mismo, con su propia lógica de sustentabilidad y orientación. Por ejemplo, el cactus de barril o biznaga—conocido como cactus brújula—acumula el rocío y la humedad, también proporciona direcciones. Tan claro como una flecha o una constelación, se inclina hacia el sur. Oriéntese haciendo uso de este recurso o por las plantas que florecen, creciendo hacia al sol, ya que éstas siempre apuntan hacia el sur en el Hemisferio Norte.',
+  'Camine o escale en las mañanas. Descanse al mediodia bajo un mezquite, una hediondilla o gobernadora para protegerse de la abrasadora temperatura del suelo. Recuerde—aun la víbora de cascabel aerodesliza la mayor parte de su cuerpo sobre la ardiente arena mientras deja su característica huella en forma de “J” a lo largo de las dunas del desierto.',
+  'Justo antes del amanecer, los beduinos volteaban piedras semienterradas para atrapar el rocío que el frío de la noche había condensado en su superficie. Los viajeros indígenas en el corredor de México-Estados Unidos buscan las anchas hojas de la yuca y el agave para abastecerse de agua. El agua de la lluvia se acumula en la base de cada planta—el ápice de las hojas—permaneciendo ahí hasta unos días después de una llovizna veraniega o invernal. La premisa a seguir es simple: el desierto acumula agua en lugares inesperados que resiste divulgar. No agote sus energías buscando sus escondites secretos, pero igualmente no presuma que sus bolsillos de humedad son inexistentes. Limite su búsqueda de agua al principio y al f inal del día de manera que el líquido que encuentre sea más que el sudor que transpire al buscarlo. La sed es rara vez saciada: se transforma para reaparecer en el horizonte. Mientras tanto, el desierto refleja el sol como en un espejo. Usted está atrapad@ en el medio de este intercambio desigual e inconsumado.',
+  'El avión piloteado por el Teniente Edwin Zolnier del Cuerpo de Marines de EE.UU. realizó un aterrizaje forzoso en el Desierto de Sonora. Al ser rescatado cinco días más tarde, Zolnier reconoció que el cactus de barril—biznaga—fue lo que lo mantuvo con vida. Técnicamente, se puede sobrevivir de la humedad de ciertos cactus, pero para esto hay que reconocer la diferencia entre lo sostenible y lo insostenible. La pulpa y la savia de algunos cactus son tan tóxicas, que tendrá que ser hospitalizad@ en caso de beberlas y comerlas. Algunos cactus no l@ matarán, pero pueden dejarle muy enferm@. La regla de oro: Solo corra el riesgo de comer o tomar cactus si la única alternativa que tiene es morir de sed. El saguaro y el órgano envenenan. Punto. Y no todos los cactus de barril son iguales. Para hacer las cosas más difíciles, los saguaros jóvenes se parecen mucho a las biznagas. Así que no debe concentrarse en buscar solamente cactus chaparros y redondos, tiene que diferenciarlos, piense en los anzuelos. Las espinas en forma de “J,” utilizadas por los indígenas seris para pescar, marcan y distinguen los cactus que verdaderamente le salvarán la vida. Cuando haya encontrado el cactus correcto, corte la parte superior con un cuchillo o piedra af ilada, pero no espere encontrar una fuente de líquido en su interior. Céntrese, corte un pedazo de la pulpa interior blancuzca que está en el centro de la planta. Mastíquela. Deje que el jugo baje por su garganta. Escupa la pulpa una vez que le haya chupado todo el líquido. No se trague el bagazo. Descanse, digiera. (Cualquier esfuerzo después de comer, podría causar que perdiera lo poco que ha ganado en el proceso.) Si el sabor de la pulpa le provoca ganas de vomitar, coloque la pulpa bajo la sombra literal o improvisada (e.g., cúbrala por poco tiempo con su cuerpo). Al enfriarse, aunque sea un par de grados, el líquido sabrá súper concentrado, más “vegetal” que la mayoría de los vegetales apetitosos para los seres humanos, pero puede ser más fácil de tragar.',
+  'En climas cálidos, puede sobrevivir hasta tres semanas sin comer nada. No obstante, la necesidad de hidratación del cuerpo humano es un problema completamente distinto. Consuma las tunas del nopal, saguaro, órgano, yuca y cholla, aunque sólo sea por su contenido líquido.',
+  'En el verano, la pitaya dulce, la fruta del cactus órgano, se torna roja y pierde sus espinas al madurar. La tuna se torna un color morado, mas nunca pierde sus púas. Destronadas, desespinadas, ambas son deliciosas. Quíteles la piel.',
+  'En cuestiones de vida o muerte, podrían casi todos afirmar, “el gusto es relativo.” (Tal es el destino de la poesía como artificio, arte o sustento—una no-cuestión si no se puede beber, comer o respirar, aun si “la poesía no es un lujo”.) Sin embargo, el sabor de los cactus presenta un dilema particularmente espinoso. Aún no mezcal o tequila, muchos cactus retienen humedad, pero también toxinas. De nuevo, la norma básica: sólo tome el riesgo de comer o beber cactus si la alternativa es morir de sed. Pruebe, pruebe, pruebe. El barril de anzuelo es quizás su mejor opción, pero asegúrese de que pueda identificarlo antes de ingerir su contenido. Si no está segur@ de que ha encontrado la planta correcta, ponga una pequeña porción de la pulpa en su boca, pruébelo antes de tragar su savia. El sabor debe parecerse al de vegetales súper- saturados. Escupa todo lo que sea acre, amargo o tan desagradable que provoque ahogo sin control o vómito. Espere aproximadamente treinta minutos para medir la tolerancia de su cuerpo a este experimento—es mejor quedarse sedient@ cerca del nocivo saguaro que envenenarse o acelerar las etapas de la deshidratación. ¡Ánimo! Un paisaje que sustenta al saguaro es igualmente favorable para el barril de anzuelo.',
+  'Los álamos negros ofrecen una bienvenida—la sombra. Las arboledas también indican un arroyo en el desierto o un manantial subterráneo cercano a la superf icie. Rastree las pistas de las animales. Camine en las huellas de los coyotes o los zorros hacia el agua más fresca. Las moscas y los mosquitos rara vez se alejan de una fuente de agua. La divina permanencia de los jabalís, viajando por las zanjas. Las trayectorias del vuelo de los pájaros, como los pichones y las palomas, también indican la cercanía de un oasis. Ellos beben por las tardes. Si vuelan bajo y despacio, siga su dirección. De donde vienen quizás sea donde necesite ir para llenar su botella o frasco.',
+  'Según Heródoto, el rey Cambises perdió todo su ejército persa (cincuenta mil hombres) en una tormenta de arena egipcia hace dos mil quinientos años. Los desiertos guardan sus secretos; no hay evidencia arqueológica que corrobore la versión de Heródoto. Repentinos haboobs locales—a veces el resultado de las corrientes de aire frío generadas por las tormentas eléctricas—todavía amenazan a los viajeros del desierto. Los instrumentos en el desierto de Mojave han registrado velocidades de viento de hasta ciento sesenta kilómetros por hora. En una tormenta de arena o polvo, el calor sofoca; los vientos transubstancian el paisaje en objetos voladores no identificados. La arena se convierte en papel de lija contra la piel. De la espalda al viento. Acuéstese de costado contra un cerro o duna. Cubra su cara. Tápese la nariz y la boca. Guarde sus lentes en su camisa o en el bolsillo de la chaqueta (para que el viento no grabe sus soliloquios en ellos). Espere a que pase. Ningún Godot, una tormenta de arena seguirá el camino de un berrinche.',
+  'Las abejas africanas son un reto formidable para los que viajan por las Américas. Otras abejas pueden rodear a una persona, pero rara vez la picarían sin provocación. Las abejas del sudor, por ejemplo, aterrizan en la mano para beber hasta saciarse de la transpiración. Si no las perturba, no atacarán y se irán volando cuando estén satisfechas. Sin embargo, las abejas asesinas, descendientes de migrantes(que a su vez vienen de veintiséis abejas de Tanzania liberadas accidentalmente al sureste de Brasil), son agresivamente territoriales. Son casi idénticas a otras abejas mas dóciles y tranquilas. Las abejas africanas—ahora las reinas y trabajadoras del desierto de Sonora—se agrupan cerca de los posos de agua y de los cactus que han florecido. Las abejas asesinas defenderán sus panales en contra de cualquier amenaza: miles atacarán. Mantenga una distancia de no menos de treinta metros de sus colonias (dominios eminentes), construidas sobre un terraplén (lomas y huecos), cactus, creosotas, mezquites, los acampamentos abandonados de otros viajeros.(¡Hasta han anidado debajo de las tapas de los barriles de agua!) Si ve muchas abejas patrullando o escucha su zumbido, siga caminando. Las abejas asesinas perciben los colores oscuros o brillantes—en la ropa o el cabello—como un predador. Si las abejas forman una nube, no agite sus brazos y no las golpee. ¡Corra! O abríguese con una sabana. Las abejas africanizadas siguen los movimientos del enemigo, midiendo el monóxido de carbono que suelta. La prioridad debe ser cubrirse la cara (la hinchazón de la nariz y boca impide su respiración). Si le pican, busque un lugar seguro. Después, utilice sus dedos, un arete, una trozo de granito para quitarse los aguijones y los sacos de veneno alojados bajo la piel (si no lo hace, estos fragmentos continuarán inyectándole veneno).',
+  'Las tarántulas hembras envuelven susmadriguerasconseda.Emprendedoras, explayan sus elaboradamente tejidas entradas por la noche para atrapar a los inocentes insectos cercanos. Aunque algunos tejanos del sur sostienen que el masivo éxodo nocturno de las tarántulas son los muertos que salen de sus tumbas; de hecho, las tarántulas macho, ligeramente venenosas, rutinariamente se aventuran durante el ocaso. Si cruzan su camino, viva y deje vivir. De lo contrario, estos arácnidos con pulmones laminares le morderán o chasquearán, soplando los pelos de sus panzas al aire. Como las astillas, sus misivas entrarán en su piel, provocando gradaciones de irritación (picor, hinchamiento, topetones rojizos levantados). Peor aún, si sus pelos flotan como esporas a sus ojos, espere una irritación similar a la inducida por el spray de pimienta o el gas lacrimógeno. Pasará; pero, considere que en Italia muchos creyeron una vez que la única cura para una mordedura o el vertimiento de la tarántula era la danza ahora conocida como la tarantela.',
+  'La cascabel diamantada del oeste—color café claro a oscuro (capaz de alcanzar una longitud de dos metros)—puebla densamente los desiertos de América del Norte. Se le encuentra con mayor frecuencia en los deslaves de maleza y nichos con sombra, en la primavera, emergen de la hibernación, brotando como las flores. Ahí, en su pico venenoso, toman el sol, destellando sus parches adiamantados. Su presa preferida: los ratones y ratas canguro. La cascabel diamantada tiene un récord dudoso—la mayoría de los casos de mordedura de serpiente en el continente. Preste atención a su cascabel. Busque las superficiales marcas circulares que dejan en los lugares donde se han enrollado a dormir. Las cascabeles también son criaturas de hábito, volviendo a sus lugares de reposo. Las serpientes venenosas se clasifican en dos categorías (en relación a su veneno). Las cascabeles diamantadas van cargadas de hemotoxinas, aunque no tan concentradas como el de algunas serpientes. Compensan esta supuesta carencia con su potente modo de entrega, inyectando grandes cantidades de veneno con ataques individuales y quirúrgicos. Las hemotoxinas inundan el torrente sanguíneo, destruyen las células sanguíneas, dañan tejido, catalizan la hemorragia interna. Sí, las reacciones a las picaduras de víboras varían. Pero, si usted es mordid@ por una cascabel diamantada—especialmente entre marzo y abril—en tres minutos el área alrededor de la herida se enrojecerá e hinchará. Y, si no se trata, su cuerpo no se desviará de un guión bien ensayado: hinchazón masiva y formación de ampollas, disminución constante de la presión arterial, dolor de cabeza, dolor severo, sangre en la orina. No obstruya la circulación o haga incisiones sobre la herida. No tome analgésicos o sedantes. No coma. Retire la ropa o joyas debajo del área. Permanezca inmóvil, mantenga la mordedura debajo del nivel de su corazón. Lo ideal es que consiga que alguien más limpie la herida. Y, lo más importante—malditas fronteras—llame al 9-1-1 o 0-6-6; busque atención médica inmediatamente.',
+  'Para la mayoría, la mordedura del alacrán de corteza de Arizona, de un color amarillo translúcido y estriado café, no es letal. Los escorpiones, caminantes nocturnos, buscan escondites frescos, oscuros y húmedos durante el día. Si le pica un escorpión, limpie la herida; no coma nada por ocho horas. Es posible que se recupere. Por el contrario, la mordedura de una araña parda reclusa es literalmente “una fuerza de la naturaleza”. Espere escalofríos, f iebre, náusea, vómitos, sarpullido, irritación, y una ulcera que seguirá creciendo a menos que la herida sea extirpada y tratada médicamente. Hallada en la madera seca y en escombros, la araña parda reclusa lleva en su espalda una marca distintiva y oscura en forma de violín.',
+  'Los calambres por calor, relativamente leves, son señal de deshidratación y pérdida de sodio. Beba agua, descanse en la sombra, busque agua durante el crepúsculo. La enfermedad por calor es una lesión cuyos síntomas incluyen fatiga, mareos, desmayos, náuseas, vómitos. Repita: Beba agua, descanse en la sombra, busque agua durante el crepúsculo. El agotamiento por calor produce sudoración, piel húmeda y pegajosa, elevación del pulso y la respiración, debilidad, más desmayos, náuseas y vómitos. PARE. Las decisiones que tome a partir de ahora dictarán si vive o muere. La insolación ocurre cuando una persona continúa a pesar del agotamiento. Sobreviene el trauma—colapso físico, pérdida de conciencia, pulso y respiración acelerados, un incremento vertiginoso de la temperatura corporal, desorientación severa, destrezas motoras afectadas, micción involuntaria, pupilas dilatadas. A medida que la insolación progresa, usted experimentará dolor de pecho y brazo, convulsiones, entrará en coma. Usted no estará equipad@ para enfrentar estos síntomas si se presentan. Llame al 9-1-1 o 0-6-6 de antemano.',
+  'La cholla, o cactus saltador, se agarra. Con la más leve caricia, un botón de espinas se despega. Quite la cholla de su piel y ropa en incrementos, con una piedra, un palo, un cuchillo: el botón… grandes espinas que quedaron atrás… pequeñas espinas o gloquidias. Las agudas agujas que quedan se saldrán solas en unos cuantos días.',
+  'Monocotiledónea arborescente. “Mothers of the Disappeared.” “I Still Haven’t Found What I’m Looking For.” “Bullet the Blue Sky”: “Put El Salvador through an amplifier.” Pocas veces se sostienen por si mismos (mexicanos como los irlandeses en los Estados Unidos), el árbol de Josué suelta flores verde-amarillas—como bengalas—en la primavera. Los mormones se referían al árbol—en realidad arbusto—como “las plantas que oran”. Antropomorf izando sus ramas, comparaban el más grande de los árboles de yuca de hoja perenne al profeta Josué del Antiguo Testamento mientras señalaba hacia la tierra prometida. Utilice la madera liviana del árbol de Josué para entablillar extremidades fracturadas. Mastique las raíces de la planta para extraer su compuesto similar al corticoesteroides (en los casos de inflamación o reacción alérgica).',
+  'Un antioxidante, un medicamento antiinflamatorio, el ubicuo arbusto de la creosota se rejuvenece a través de un proceso de clonación. Puede vivir hasta 9,000 años y los Tohono O’odham pensaban que era el ser viviente más antiguo de la tierra. Diez años después que la explosión termonuclear de 1962 destruyó veintiún arbustos de la creosota en Nevada, otros veinte retoñaron casi en forma de protesta. “No nos moverán”. Hiroshima mon amour—sin fantasmas, sin quemaduras, sin sombras. El arbusto de creosota simplemente crece—un artista de la sobrevivencia.',
+  'Aproxímese a caminos pedregosos con cautela, especialmente en la oscuridad o después de una tormenta eléctrica. Las caídas de pendientes empinadas representan la segunda mayor causa de heridas y muertes en el desierto (siendo la primera, deshidratación). Sacrifique impulso por un punto de apoyo más seguro. Aprenda a leer el terreno: anticipe rocas sueltas y gravilla. Trepe por piedras más grandes y difíciles de desplazar. Elija rutas con parches de vegetación anclados. Dese cuenta que el descenso, como la disidencia, siempre es más peligroso que el ascenso. Use un bastón para probar lo que está adelante. Con otros, viaje en diagonal; evite caminar directamente debajo de alguien más en cuestas empinadas (Si no, espere que lo que la persona suelte al bajar le impacte.) Al igual que los caminos pedregosos, las dunas del desierto son transitables. Aprenda también a leer este terreno. Atraviese el desierto de dunas arrítmicamente—estilo Fremen. Rehúya las dunas con bases anguladas hacia sotavento. Camine entremedio de sus huecos sagrados, fijándose en los hoyos pequeños (que señalan túneles) y depresiones cónicas de limo. O manténgase en lo alto de las laderas surrealistas de las dunas hechas de partículas de arena ásperas, apretadas. Las cimas brindan estabilidad si usted se resiste repetir el ritmo—un movimiento, como el aliento, que sube y baja.',
+  'Tormentas eléctricas, revelaciones, pueden parecer como un consuelo para los que sufren de calor y sed. Pero las lluvias torrenciales, comunes en el DF desde mayo hasta septiembre, pueden ser tan mortales como el sol imperturbable y sin gríngolas en los desiertos de Sonora y Chihuahua. (Cada aguacero, una zona cero.) En minutos, el agua rio arriba baja como un muro de agua y escombros. Inundaciones repentinas, deslazamientos de tierra y monzones devoran. Deslaves en zonas bajas, arroyos y barrancos se desbordan. La temperatura del aire—como los papalotes—cae en picada. Cuando los nubarrones van juntándose, busque terreno elevado, evadiendo cactus altos y árboles, colinas y cadenas montañosas. Relámpagos, siempre a la vanguardia, anticipan el diluvio. Cuando el agua retroceda, entrecruce su obra de arte—patrones en la arena, esculpida como un mapa topográf ico o un libro de Braille abierto.',
+  'El frío del desierto también mata. El impredecible clima de invierno incluye hielo, aguanieve, granizo y nieve. En un mundo ideal, llevaría consigo una chaqueta a prueba de viento y agua. En un mundo menos que ideal, use peñascos y formaciones rocosas para protegerse del viento. Éstas mantienen el calor del sol por horas. No se acueste en el suelo arenoso ni cave hoyos poco profundos en él. Más rápido que el aire, la arena—un disipador—drenará, como un líquido, el calor de su cuerpo.',
+  'No entre en pánico. No entre en pánico. Si está demasiad@ cansad@ o desorientad@ para continuar, dese cuente que probablemente no va a estar pensando claramente. El calor revuelve el cerebro como huevos. “Es completamente noble salir de una pose”. Reconozca sus propias limitaciones. Prenda su teléfono. Busque una señal. (Camine sólo si no está dentro de la cobertura. Luego, apague el teléfono para conservar la vida de la batería para salvar la suya. Camine, repita. Camine, repita, hasta que encuentre señal.) Llame al 9-1-1 o 0-6-6. Razone—es mejor vivir para cruzar el desierto mañana que dejar que el desierto le crucif ique hoy.',
+  'Mantenga su cuerpo tan cubierto como la comodidad lo permita. Las quemaduras de sol no sólo inhiben viajes, pueden agravar, acelerar la deshidratación e hipertermia. La arena y las rocas reflejan el calor y la luz como si se estuviera caminando sobre un líquido metálico o “cenizas del tiempo”. (¡También proteja sus ojos de la ceguera por el sol!) Mantenga la ropa suelta, ligera de peso y de color. Piense pardo—canela, blancuzco, caqui, verde oliva. Piense evaporación controlada (la ropa regula). Si se le presenta la oportunidad, empape su camisa en el agua que sea muy sucia para beber. Puede que luego su aspecto o su olor sea desagradable, pero la ropa húmeda desacelerará su grado de sudoración. La clave aquí es la conservación—conserve sus recursos cuando sea posible.',
+  'Al fin y al cabo, muchos argumentarían que la naturaleza establece el estándar de neutralidad. A diferencia de los seres humanos, la naturaleza no mantiene lealtades a una nación, familia, negocio, religión. Usted ya sabe que el peligro más grande al que se enfrenta en el desierto no es necesariamente el clima o el terreno. Algunos no tendrán su mejor interés en mente. Los rescatistas se comprometen a asistir a los que necesiten ayuda; aténgalos a cumplir esa promesa. No le confíe su vida a ningun@ otr@ extrañ@.',
+  'Cuando todo—incluyendo este teléfono móvil—falle, construya una señal de fuego en la tierra o en la arena, lejos de arbustos y árboles. Use cactus muertos y mezquite. Un fuego en forma de “X”—el símbolo internacional de peligro—no necesita traducción.',
+  'Dos horas antes o después de medio día, inserte un palo (de un metro de largo) en la tierra. Marque la punta de la sombra que produzca con una piedra. Espere veinte minutos. Marque la segunda sombra con otra piedra. Dibuje una línea recta de la primera piedra a la segunda, extendiendo la línea otros dos metros. Este es su eje de oeste a este. Dibuje una línea perpendicular que cruce por el centro del eje. Párase en la intersección de estas dos líneas. Mantenga el oeste a su izquierda para que mire hacia el norte geográf ico. Escoja un punto de referencia en línea con esa orientación. Camine hacia ese punto de referencia; repita este ejercicio.',
+  'En la noche, busque la Osa Mayor. Fíjese en las dos estrellas que forman el contorno. Imagine una línea desde esas estrellas a un punto como cinco veces la distancia entre ellas. Ahí debe encontrar a Polaris, la estrella del Norte, esperándole (al f inal del mango de la Osa Menor). Imagine una línea recta entre Polaris y el horizonte. Este es su segundo punto de orientación hacia el norte geográf ico.'
+]
+
+var directions = [
+	'00 Center yourself, cut out a chunk of the whitish inner pulp from the cactus’ correspondent center. Chew it. Let the juice run down your throat. Spit out the pulp when you’ve sucked it dry.',
+	'01 If you are stung by a scorpion, clean the wound; do not eat anything for eight hours. It is possible for you to recover.',
+	'02 Cut the tracks of animals. Walk in the footprints of coyote or fox to the freshest water available.',
+	'03 The flight paths of birds, like pigeons and doves, indicate the proximity of an oasis. They drink in the evenings.',
+	'04 If the barrel cactus—known otherwise as the compass cactus—stockpiles moisture, it also affords direction. As clear as an arrow or a constellation, it leans south.',
+	'05 Climb or walk in the morning. Rest midday beneath creosote bush or mesquite, insulating yourself from the superheated ground.',
+	'06 The desert caches water in unlikely places that it resists divulging. Do not expend all your energies searching for its secret stashes, but likewise do not assume that its pockets of moisture are nonexistent.',
+	'07 Only take the risk of eating or drinking cacti if the alternative you face is dying of thirst.',
+	'08 You can survive without eating anything for three weeks in hot weather. But, the body’s need for hydration is a different matter entirely. Consume the fruit of prickly pear, saguaro, organ pipe, yucca, or cholla for their moisture alone.',
+	'09 Diamondbacks hold a dubious record—the majority of the continent’s snakebite cases. Listen for their rattle. Look for the shallow circular marks they leave in locations where they’ve coiled up to sleep.',
+	'10 Heat cramps, relatively mild, signal dehydration and loss of sodium. Drink water, rest in the shade, seek water at twilight.',
+	'11 Heat exhaustion produces sweating, clammy skin, increased pulse and respiration rate, weakness, more fainting, nausea and vomiting. STOP. The choices you make from now on will dictate whether you live or die.',
+	'12 Use the Joshua tree’s lightweight wood to splint broken limbs. Chew the plant’s roots for the steroid-like compound released (in cases of allergic reaction or swelling).',
+	'13 Approach rocky trails with caution, especially in the dark or after a thunderstorm. Falls from steep slopes represent the second leading cause of injury and death in the desert (the first being dehydration). Sacrifice momentum for surer footing.',
+	'14 Learn to read the terrain: Anticipate loose rock and gravel. Scramble by way of larger, less mobile boulders. Choose routes with anchoring patches of vegetation. Realize that descent, like dissent, is always more dangerous than ascent.',
+	'15 Low-lying washes, arroyos, canyons overflow. Air temperatures—like kites—nosedive. As storm clouds gather, seek higher ground, avoiding tall cacti and trees, hilltops and ridgelines. Lightning, always the avant-garde, precedes downpours.',
+	'16 The desert cold also kills. Unpredictable winter weather includes ice, sleet, hail, and snow. In an ideal world, you’d carry a wind- and waterproof jacket with you. In a less-than-ideal world, use large boulders and rock formations as windbreaks.',
+	'17 Do not panic. Do not panic. If you are too tired or disoriented to continue, realize that you probably will not be thinking clearly. Heat scrambles the brain like eggs.',
+	'18 You already know that the greatest danger you face in the desert may not be the climate or the terrain. Some will not have your best interests in mind.'
+]
+
+var direcciones = [
+	'00 Céntrese, corte un pedazo de la pulpa interior blancuzca que está en el centro de la planta. Mastíquela. Deje que el jugo baje por su garganta. Escupa la pulpa una vez que le haya chupado todo el líquido.',
+	'01 Si le pica un escorpión, limpie la herida; no coma nada por ocho horas. Es posible que se recupere.',
+	'02 Rastree las pistas de las animales. Camine en las huellas de los coyotes o los zorros hacia el agua más fresca.',
+	'03 Las trayectorias del vuelo de los pájaros, como los pichones y las palomas, también indican la cercanía de un oasis. Ellos beben por las tardes.',
+	'04 El cactus de barril o biznaga—conocido como cactus brújula—acumula el rocío y la humedad, también proporciona direcciones. Tan claro como una flecha o una constelación, se inclina hacia el sur.',
+	'05 Camine o escale en las mañanas. Descanse al mediodia bajo un mezquite, una hediondilla o gobernadora para protegerse de la abrasadora temperatura del suelo.',
+	'06 El desierto acumula agua en lugares inesperados que resiste divulgar. No agote sus energías buscando sus escondites secretos, pero igualmente no presuma que sus bolsillos de humedad son inexistentes.',
+	'07 Solo corra el riesgo de comer o tomar cactus si la única alternativa que tiene es morir de sed.',
+	'08 En climas cálidos, puede sobrevivir hasta tres semanas sin comer nada. No obstante, la necesidad de hidratación del cuerpo humano es un problema completamente distinto. Consuma las tunas del nopal, saguaro, órgano, yuca y cholla, aunque sólo sea por su contenido líquido.',
+	'09 La cascabel diamantada tiene un récord dudoso—la mayoría de los casos de mordedura de serpiente en el continente. Preste atención a su cascabel. Busque las superficiales marcas circulares que dejan en los lugares donde se han enrollado a dormir.',
+	'10 Los calambres por calor, relativamente leves, son señal de deshidratación y pérdida de sodio. Beba agua, descanse en la sombra, busque agua durante el crepúsculo.',
+	'11 El agotamiento por calor produce sudoración, piel húmeda y pegajosa, elevación del pulso y la respiración, debilidad, más desmayos, náuseas y vómitos. PARE. Las decisiones que tome a partir de ahora dictarán si vive o muere.',
+	'12 Utilice la madera liviana del árbol de Josué para entablillar extremidades fracturadas. Mastique las raíces de la planta para extraer su compuesto similar al corticoesteroides (en los casos de inflamación o reacción alérgica).',
+	'13 Aproxímese a caminos pedregosos con cautela, especialmente en la oscuridad o después de una tormenta eléctrica. Las caídas de pendientes empinadas representan la segunda mayor causa de heridas y muertes en el desierto (siendo la primera, deshidratación).',
+	'14 Aprenda a leer el terreno: anticipe rocas sueltas y gravilla. Trepe por piedras más grandes y difíciles de desplazar. Elija rutas con parches de vegetación anclados. Dese cuenta que el descenso, como la disidencia, siempre es más peligroso que el ascenso.',
+	'15 Deslaves en zonas bajas, arroyos y barrancos se desbordan. La temperatura del aire—como los papalotes—cae en picada. Cuando los nubarrones van juntándose, busque terreno elevado, evadiendo cactus altos y árboles, colinas y cadenas montañosas. Relámpagos, siempre a la vanguardia, anticipan el diluvio.',
+	'16 El frío del desierto también mata. El impredecible clima de invierno incluye hielo, aguanieve, granizo y nieve. En un mundo ideal, llevaría consigo una chaqueta a prueba de viento y agua. En un mundo menos que ideal, use peñascos y formaciones rocosas para protegerse del viento.',
+	'17 No entre en pánico. No entre en pánico. Si está demasiad@ cansad@ o desorientad@ para continuar, dese cuente que probablemente no va a estar pensando claramente. El calor revuelve el cerebro como huevos.',
+	'18 Usted ya sabe que el peligro más grande al que se enfrenta en el desierto no es necesariamente el clima o el terreno. Algunos no tendrán su mejor interés en mente.'
+]
+
+/* OPEN AND CLOSE WINDOWS */
+
+$('#launcher').click(function(e){
+  $('#window').fadeIn(1000);
+	$('.alert').fadeIn(1000);
+});
+$('#playlistopen').click(function(e){
+	$('.playlist').fadeIn(1000);
+});
+$('#aboutopen').click(function(e){
+	$('.about').fadeIn(1000);
+});
+$('#filesopen').click(function(e){
+	$('.files').fadeIn(1000);
+});
+$('#exploreopen').click(function(e){
+	$('.explore').fadeIn(1000);
+		hellodesert();
+});
+$('#poemsopen').click(function(e){
+	typed.start();
+	$('.poems').fadeIn(1000);
+});
+$('#routeopen').click(function(e){
+	$('.routes').fadeIn(1000);
+	addElement();
+});
+
+$('#filesclose').click(function(e){
+	var elem = $('[id=audioplaying]');
+  elem.remove();
+	$(".pulse").removeClass("pulse");
+	$('.files').fadeOut(1000);
+});
+$('#alertclose').click(function(e){
+    $('.alert').fadeOut(1000);
+});
+$('#poemsclose').click(function(e){
+	  typed.reset();
+		typed.stop();
+    $('.poems').fadeOut(1000);
+});
+$('#exploreclose').click(function(e){
+	  var elem = $('[id=audioplaying]');
+    elem.remove();
+    $('.explore').fadeOut(1000);
+});
+$('#aboutclose').click(function(e){
+    $('.about').fadeOut(1000);
+});
+$('#routesclose').click(function(e){
+		var route = $('[class=directionbox]');
+  	route.remove();
+		var snds = $('[id=audioplaying]');
+	  snds.remove();
+    $('.routes').fadeOut(1000);
+});
+$('#windowclose').click(function(e){
+	  typed.reset();
+	  typed.stop();
+		var elem = $('[id=audioplaying]');
+		elem.remove();
+		var route = $('[class=directionbox]');
+  	route.remove();
+		$(".pulse").removeClass("pulse");
+    $('#window').fadeOut(1000);
+		$('.files').fadeOut(1000);
+		$('.poems').fadeOut(1000);
+		$('.explore').fadeOut(1000);
+		$('.routes').fadeOut(1000);
+		$('.about').fadeOut(1000);
+});
+
+/* BLINK FUNCTION */
+
+$('.blink').each(function() {
+    var elem = $(this);
+    setInterval(function() {
+        if (elem.css('visibility') == 'hidden') {
+            elem.css('visibility', 'visible');
+        } else {
+            elem.css('visibility', 'hidden');
+        }
+    }, 500);
+});
+
+/* GENERATE DIRECTIONS */
+
+var count = 2;
+var randomtext = 0;
+var randomaudio = 0;
+
+function addElement() {
+	var dir = document.createElement("div");
+	dir.classList.add("directionbox");
+	randomtext = Math.floor(Math.random() * directions.length);
+	dir.innerHTML = "<img class='directionicon' src='assets/" + directions[randomtext].substring(0, 2) +".png'><div class='routebox'>" + directions[randomtext].substring(3, 500) + "<br></div>";
+  var text = directions[randomtext];
+	directions.splice(directions.indexOf(text), 1);
+	document.getElementById('routehere').appendChild(dir);
+	var div = $("#routehere");
+	$(".directionbox").fadeIn(3000);
+	div.scrollTop(div.prop('scrollHeight'));
+	if (count > 0) {
+		count--;
+		setTimeout(addElement, 3000);
+	} else {
+		setTimeout(addAudio, 3000);
+		count = 2;
+  }
+	if (directions.length < 1) {
+		directions.push(
+			'00 Center yourself, cut out a chunk of the whitish inner pulp from the cactus’ correspondent center. Chew it. Let the juice run down your throat. Spit out the pulp when you’ve sucked it dry.',
+			'01 If you are stung by a scorpion, clean the wound; do not eat anything for eight hours. It is possible for you to recover.',
+			'02 Cut the tracks of animals. Walk in the footprints of coyote or fox to the freshest water available.',
+			'03 The flight paths of birds, like pigeons and doves, indicate the proximity of an oasis. They drink in the evenings.',
+			'04 If the barrel cactus—known otherwise as the compass cactus—stockpiles moisture, it also affords direction. As clear as an arrow or a constellation, it leans south.',
+			'05 Climb or walk in the morning. Rest midday beneath creosote bush or mesquite, insulating yourself from the superheated ground.',
+			'06 The desert caches water in unlikely places that it resists divulging. Do not expend all your energies searching for its secret stashes, but likewise do not assume that its pockets of moisture are nonexistent.',
+			'07 Only take the risk of eating or drinking cacti if the alternative you face is dying of thirst.',
+			'08 You can survive without eating anything for three weeks in hot weather. But, the body’s need for hydration is a different matter entirely. Consume the fruit of prickly pear, saguaro, organ pipe, yucca, or cholla for their moisture alone.',
+			'09 Diamondbacks hold a dubious record—the majority of the continent’s snakebite cases. Listen for their rattle. Look for the shallow circular marks they leave in locations where they’ve coiled up to sleep.',
+			'10 Heat cramps, relatively mild, signal dehydration and loss of sodium. Drink water, rest in the shade, seek water at twilight.',
+			'11 Heat exhaustion produces sweating, clammy skin, increased pulse and respiration rate, weakness, more fainting, nausea and vomiting. STOP. The choices you make from now on will dictate whether you live or die.',
+			'12 Use the Joshua tree’s lightweight wood to splint broken limbs. Chew the plant’s roots for the steroid-like compound released (in cases of allergic reaction or swelling).',
+			'13 Approach rocky trails with caution, especially in the dark or after a thunderstorm. Falls from steep slopes represent the second leading cause of injury and death in the desert (the first being dehydration). Sacrifice momentum for surer footing.',
+			'14 Learn to read the terrain: Anticipate loose rock and gravel. Scramble by way of larger, less mobile boulders. Choose routes with anchoring patches of vegetation. Realize that descent, like dissent, is always more dangerous than ascent.',
+			'15 Flash floods, mudslides, monsoons swallow. Low-lying washes, arroyos, canyons overflow. Air temperatures—like kites—nosedive. As storm clouds gather, seek higher ground, avoiding tall cacti and trees, hilltops and ridgelines. Lightning, always the avant-garde, precedes downpours.',
+			'16 The desert cold also kills. Unpredictable winter weather includes ice, sleet, hail, and snow. In an ideal world, you’d carry a wind- and waterproof jacket with you. In a less-than-ideal world, use large boulders and rock formations as windbreaks.',
+			'17 Do not panic. Do not panic. If you are too tired or disoriented to continue, realize that you probably will not be thinking clearly. Heat scrambles the brain like eggs.',
+			'18 You already know that the greatest danger you face in the desert may not be the climate or the terrain. Some will not have your best interests in mind.'
+		);
+	}
+}
+
+function addAudio() {
+	var dir = document.createElement("div");
+	dir.classList.add("directionbox");
+	randomaudio = Math.floor(Math.random() * src.length);
+	dir.innerHTML = '<img class="directionicon" src="assets/phoneaudio.png"><div class="routebox">Incoming Audio Message...<br><a id="' + src[randomaudio] + '" onclick="playItHere(event, this)" class="continueroute">STOP & LISTEN</a><a onclick="addElement()"><div class="continueroute">WALK FURTHER</div></a></div>'
+	document.getElementById('routehere').appendChild(dir);
+	$(".directionbox").fadeIn(2000);
+	var div = $("#routehere");
+	div.scrollTop(div.prop('scrollHeight'));
+}
+
+function add() {
+  count++;
+  addElement();
+}
+
+/* GENERATE FILE BROWSER */
+
+for (var i = 0; i < 98; i++) {
+  $('.filelist').append('<a id="' + src[i] + '" class="blinkhere" onclick="playItHere(event, this)"><div>' + src[i].substring(9, 21) + '<br>' + src[i].substring(22, 40) + '</div></a>');
+}
+
+function playItHere(e, link) {
+	var elem = $('[id=audioplaying]');
+  elem.remove();
+	$(".pulse").removeClass("pulse");
+  var audio = document.createElement("audio");
+  var src = document.createElement("source");
+  src.src = link.id;
+  audio.appendChild(src);
+	audio.id = "audioplaying";
+	$(link).addClass("pulse");
+	document.body.appendChild(audio);
+	var element = document.getElementById("audioplaying");
+	element.addEventListener('ended', function() {
+    $(link).removeClass("pulse");
+	}, false);
+  element.play();
+}
+
+/* GENERATE DESERT */
+
+let check = false;
+function hellodesert() {
+
+	if (check == false) {
+		check = true;
+		for (var i = 0; i < 15; i++) {
+		  $('.desert').append('<div class="cactus"></div>');
+		}
+		for (var i = 0; i < 5; i++) {
+		  $('.desert').append('<div class="boulder"></div>');
+			$('.desert').append('<div class="mountain"></div>');
+			$('.desert').append('<div class="diamondback"></div>');
+			$('.desert').append('<div class="coyote"></div>');
+		}
+		for (var i = 0; i < 2; i++) {
+			$('.desert').append('<div class="jeep"></div>');
+		}
+		for (var i = 0; i < 20; i++) {
+			randomaudio = Math.floor(Math.random() * src.length);
+		  $('.desert').append('<div class="cellphone" id="' +  src[randomaudio] + '" onclick="playItHere(event, this)"></div>');
+		}
+		var pixwidth =  document.getElementById('windowcontent').clientWidth - 30;
+		$( '.cactus' ).each(function( index ) {
+			var random = (Math.random() * 50) + 75 + "px";
+		  $(this).css({
+		  	left: (Math.random() * (pixwidth - $(this).width()) + 50) - 50 + "px",
+		  	top : Math.random() * ($('.desert').height() - $(this).height()),
+				height : random,
+				width : random,
+		  });
+		});
+		$( '.jeep' ).each(function( index ) {
+		  $(this).css({
+				left: (Math.random() * (pixwidth - $(this).width()) + 50) - 50 + "px",
+		  	top : Math.random() * ($('.desert').height() - $(this).height()),
+		  });
+		});
+		$( '.mountain' ).each(function( index ) {
+			var random = (Math.random() * 100) + 175 + "px";
+		  $(this).css({
+		  	left: (Math.random() * (pixwidth - $(this).width()) + 50) - 50 + "px",
+		  	top : Math.random() * ($('.desert').height() - $(this).height()),
+				height : random,
+				width : random,
+		  });
+		});
+		$( '.coyote' ).each(function( index ) {
+			var random = (Math.random() * 100) + 50 + "px";
+		  $(this).css({
+		  	left: (Math.random() * (pixwidth - $(this).width()) + 50) - 50 + "px",
+		  	top : Math.random() * ($('.desert').height() - $(this).height()),
+				height : random,
+				width : random
+		  });
+		});
+		$( '.diamondback' ).each(function( index ) {
+			var random = (Math.random() * 40) + 40 + "px";
+		  $(this).css({
+		  	left: (Math.random() * (pixwidth - $(this).width()) + 50) - 50 + "px",
+		  	top : Math.random() * ($('.desert').height() - $(this).height()),
+				height : random,
+				width : random
+		  });
+		});
+		$( '.boulder' ).each(function( index ) {
+			var random = (Math.random() * 25) + 70 + "px";
+		  $(this).css({
+		  	left: (Math.random() * (pixwidth - $(this).width()) + 50) - 50 + "px",
+		  	top : Math.random() * ($('.desert').height() - $(this).height()),
+				height : random,
+				width : random,
+		  });
+		});
+		$( '.cellphone' ).each(function( index ) {
+		  $(this).css({
+		  	left: (Math.random() * (pixwidth - $(this).width()) + 50) - 50 + "px",
+		  	top : Math.random() * ($('.desert').height() - $(this).height())
+		  });
+		});
+	}
+}
+
+$('button').on('click', function (e) {
+  var rand = Math.floor(Math.random() * src.length);
+  $('#audio-fail source').attr("src", src[rand])
+  $('#audio-fail')[0].load();
+  $('#audio-fail')[0].play();
+});
+
+/* AUDIO PLAYLIST AND PLAYER */
+
+jQuery(function ($) {
+    'use strict'
+    var supportsAudio = !!document.createElement('audio').canPlayType;
+    if (supportsAudio) {
+        // initialize plyr
+        var player = new Plyr('#audio1', {
+            controls: [
+                'restart',
+                'play',
+                'progress',
+                'current-time',
+                'duration',
+                'mute',
+                'volume',
+
+            ]
+        });
+        // initialize playlist and controls
+        var index = 0,
+            playing = false,
+            mediaPath = 'audio320/',
+            extension = '',
+            tracks = [{
+                "track": 1,
+                "name": "59ENGLISHanna.mp3",
+                "duration": "0:29",
+                "file": "59ENGLISHanna"
+            }, {
+                "track": 2,
+                "name": "60ENGLISH-KATIE.mp3",
+                "duration": "0:51",
+                "file": "60ENGLISH-KATIE"
+            }, {
+                "track": 3,
+                "name": "60SpanishNatasha.mp3",
+                "duration": "1:07",
+                "file": "60SpanishNatasha"
+            }, {
+                "track": 4,
+                "name": "61ENGLISHamy.mp3",
+                "duration": "0:55",
+                "file": "61ENGLISHamy"
+            }, {
+                "track": 5,
+                "name": "61SpanishNatasha.mp3",
+                "duration": "1:52",
+                "file": "61SpanishNatasha"
+            }, {
+                "track": 6,
+                "name": "62EnglishNatasha.mp3",
+                "duration": "1:37",
+                "file": "62EnglishNatasha"
+            }, {
+                "track": 7,
+                "name": "62SpanishNatasha.mp3",
+                "duration": "1:52",
+                "file": "62SpanishNatasha"
+            }, {
+                "track": 8,
+                "name": "63ENGLISHamy.mp3",
+                "duration": "1:21",
+                "file": "63ENGLISHamy"
+            }, {
+                "track": 9,
+                "name": "63SPANISHelizabeth.mp3",
+                "duration": "1:23",
+                "file": "63SPANISHelizabeth"
+            }, {
+                "track": 10,
+                "name": "64ENGLISH-ZE.mp3",
+                "duration": "0:36",
+                "file": "64ENGLISH-ZE"
+            }, {
+                "track": 11,
+                "name": "64ESPAN_Ricardo.mp3",
+                "duration": "0:59",
+                "file": "64ESPAN_Ricardo"
+            }, {
+                "track": 12,
+                "name": "65ENGLISH-CYNTHIA.mp3",
+                "duration": "0:43",
+                "file": "65ENGLISH-CYNTHIA"
+            }, {
+                "track": 13,
+                "name": "65SPAN-CYNTHIA.mp3",
+                "duration": "0:57",
+                "file": "65SPAN-CYNTHIA"
+            }, {
+                "track": 14,
+                "name": "66ENGLISH-IVAN.mp3",
+                "duration": "0:52",
+                "file": "66ENGLISH-IVAN"
+            }, {
+                "track": 15,
+                "name": "66SPAN-IVAN.mp3",
+                "duration": "0:54",
+                "file": "66SPAN-IVAN"
+            }, {
+                "track": 16,
+                "name": "67ENGLISHamy.mp3",
+                "duration": "0:44",
+                "file": "67ENGLISHamy"
+            }, {
+                "track": 17,
+                "name": "67SPANISHivan.mp3",
+                "duration": "0:37",
+                "file": "67SPANISHivan"
+            }, {
+                "track": 18,
+                "name": "68EnglishNatashas.mp3",
+                "duration": "0:18",
+                "file": "68EnglishNatashas"
+            }, {
+                "track": 19,
+                "name": "68SpanishNatasha.mp3",
+                "duration": "0:21",
+                "file": "68SpanishNatasha"
+            }, {
+                "track": 20,
+                "name": "70_1SPANISHelizabeth.mp3",
+                "duration": "1:02",
+                "file": "70_1SPANISHelizabeth"
+            }, {
+                "track": 21,
+                "name": "71SPAN-MARIA.mp3",
+                "duration": "0:39",
+                "file": "71SPAN-MARIA"
+            }, {
+                "track": 22,
+                "name": "72_1ENGLISHamy.mp3",
+                "duration": "1:35",
+                "file": "72_1ENGLISHamy"
+            }, {
+                "track": 23,
+                "name": "Al-Khwarizmi-English-hq.mp3",
+                "duration": "0:10",
+                "file": "Al-Khwarizmi-English-hq"
+            }, {
+                "track": 24,
+                "name": "Code-Micha-hq.mp3",
+                "duration": "1:20",
+                "file": "Code-Micha-hq"
+            }, {
+                "track": 25,
+                "name": "Da-Sein-hq.mp3",
+                "duration": "0:23",
+                "file": "Da-Sein-hq"
+            }, {
+                "track": 26,
+                "name": "Digamos-so-say-we-all-hq.mp3",
+                "duration": "0:05",
+                "file": "Digamos-so-say-we-all-hq"
+            }, {
+                "track": 27,
+                "name": "ds-1-english-hq.mp3",
+                "duration": "0:27",
+                "file": "ds-1-english-hq"
+            }, {
+                "track": 28,
+                "name": "ds-2-spanish-hq.mp3",
+                "duration": "0:25",
+                "file": "ds-2-spanish-hq"
+            }, {
+                "track": 29,
+                "name": "DS-3-Spanish-hq.mp3",
+                "duration": "1:33",
+                "file": "DS-3-Spanish-hq"
+            }, {
+                "track": 30,
+                "name": "DS-5-Spanish.mp3",
+                "duration": "0:39",
+                "file": "DS-5-Spanish"
+            }, {
+                "track": 31,
+                "name": "Dubliners-hq-1.mp3",
+                "duration": "1:43",
+                "file": "Dubliners-hq-1"
+            }, {
+                "track": 32,
+                "name": "Eucalyptus-hq.mp3",
+                "duration": "0:02",
+                "file": "Eucalyptus-hq"
+            }, {
+                "track": 33,
+                "name": "Grace-Ace-hq-1.mp3",
+                "duration": "1:37",
+                "file": "Grace-Ace-hq-1"
+            }, {
+                "track": 34,
+                "name": "I-like-America-hq.mp3",
+                "duration": "0:42",
+                "file": "I-like-America-hq"
+            }, {
+                "track": 35,
+                "name": "Poema1.mp3",
+                "duration": "0:37",
+                "file": "Poema1"
+            }, {
+                "track": 36,
+                "name": "Poema2.mp3",
+                "duration": "0:16",
+                "file": "Poema2"
+            }, {
+                "track": 37,
+                "name": "Poema3.mp3",
+                "duration": "1:10",
+                "file": "Poema3"
+            }, {
+                "track": 38,
+                "name": "Poema4.mp3",
+                "duration": "1:57",
+                "file": "Poema4"
+            }, {
+                "track": 39,
+                "name": "Poema5.mp3",
+                "duration": "0:31",
+                "file": "Poema5"
+            }, {
+                "track": 40,
+                "name": "Poema6.mp3",
+                "duration": "1:33",
+                "file": "Poema6"
+            }, {
+                "track": 41,
+                "name": "Poema7.mp3",
+                "duration": "0:42",
+                "file": "Poema7"
+            }, {
+                "track": 42,
+                "name": "Poema8.mp3",
+                "duration": "1:09",
+                "file": "Poema8"
+            }, {
+                "track": 43,
+                "name": "Poema9.mp3",
+                "duration": "2:10",
+                "file": "Poema9"
+            }, {
+                "track": 44,
+                "name": "Poema10.mp3",
+                "duration": "1:10",
+                "file": "Poema10"
+            }, {
+                "track": 45,
+                "name": "Poema11.mp3",
+                "duration": "2:15",
+                "file": "Poema11"
+            }, {
+                "track": 46,
+                "name": "Poema12.mp3",
+                "duration": "0:51",
+                "file": "Poema12"
+            }, {
+                "track": 47,
+                "name": "Poema13.mp3",
+                "duration": "1:30",
+                "file": "Poema13"
+            }, {
+                "track": 48,
+                "name": "Poema14.mp3",
+                "duration": "0:24",
+                "file": "Poema14"
+            }, {
+                "track": 49,
+                "name": "Poema15.mp3",
+                "duration": "0:59",
+                "file": "Poema15"
+            }, {
+                "track": 50,
+                "name": "Poema16.mp3",
+                "duration": "0:47",
+                "file": "Poema16"
+            }, {
+                "track": 51,
+                "name": "Poema17.mp3",
+                "duration": "1:32",
+                "file": "Poema17"
+            }, {
+                "track": 52,
+                "name": "Poema18.mp3",
+                "duration": "1:05",
+                "file": "Poema18"
+            }, {
+                "track": 53,
+                "name": "Poema19.mp3",
+                "duration": "0:36",
+                "file": "Poema19"
+            }, {
+                "track": 54,
+                "name": "Poema20.mp3",
+                "duration": "0:54",
+                "file": "Poema20"
+            }, {
+                "track": 55,
+                "name": "Poema21.mp3",
+                "duration": "0:50",
+                "file": "Poema21"
+            }, {
+                "track": 56,
+                "name": "Poema22.mp3",
+                "duration": "0:35",
+                "file": "Poema22"
+            }, {
+                "track": 57,
+                "name": "Poema23.mp3",
+                "duration": "0:20",
+                "file": "Poema23"
+            }, {
+                "track": 58,
+                "name": "Poema24I.mp3",
+                "duration": "0:51",
+                "file": "Poema24I"
+            }, {
+                "track": 59,
+                "name": "Poema24II.mp3",
+                "duration": "0:32",
+                "file": "Poema24II"
+            }, {
+                "track": 60,
+                "name": "TBT-44-45-Nahuatl.mp3",
+                "duration": "0:51",
+                "file": "TBT-44-45-Nahuatl"
+            }, {
+                "track": 61,
+                "name": "TBT-46-Nahuatl.mp3",
+                "duration": "0:30",
+                "file": "TBT-46-Nahuatl"
+            }, {
+                "track": 62,
+                "name": "TBT-47-Nahuatl.mp3",
+                "duration": "1:37",
+                "file": "TBT-47-Nahuatl"
+            }, {
+                "track": 63,
+                "name": "TBT-48-Nahuatl.mp3",
+                "duration": "3:05",
+                "file": "TBT-48-Nahuatl"
+            }, {
+                "track": 64,
+                "name": "TBT-49-Nahuatl.mp3",
+                "duration": "0:55",
+                "file": "TBT-49-Nahuatl"
+            }, {
+                "track": 65,
+                "name": "TBT-50-Nahuatl.mp3",
+                "duration": "1:43",
+                "file": "TBT-50-Nahuatl"
+            }, {
+                "track": 66,
+                "name": "TBT-51-Nahuatl.mp3",
+                "duration": "1:00",
+                "file": "TBT-51-Nahuatl"
+            }, {
+                "track": 67,
+                "name": "TBT-52-Nahuatl.mp3",
+                "duration": "1:28",
+                "file": "TBT-52-Nahuatl"
+            }, {
+                "track": 68,
+                "name": "TBT-53-54_all_Nahuatl.mp3",
+                "duration": "2:50",
+                "file": "TBT-53-54_all_Nahuatl"
+            }, {
+                "track": 69,
+                "name": "TBT-53-54-1of3-Nahuatl.mp3",
+                "duration": "1:15",
+                "file": "TBT-53-54-1of3-Nahuatl"
+            }, {
+                "track": 70,
+                "name": "TBT-53-54-2of3-Nahuatl.mp3",
+                "duration": "0:55",
+                "file": "TBT-53-54-2of3-Nahuatl"
+            }, {
+                "track": 71,
+                "name": "TBT-53-54-3of3-Nahuatl.mp3",
+                "duration": "0:40",
+                "file": "TBT-53-54-3of3-Nahuatl"
+            }, {
+                "track": 72,
+                "name": "TBT-55-Nahuatl.mp3",
+                "duration": "1:33",
+                "file": "TBT-55-Nahuatl"
+            }, {
+                "track": 73,
+                "name": "TBT-56-1of3-Nahuatl.mp3",
+                "duration": "0:48",
+                "file": "TBT-56-1of3-Nahuatl"
+            }, {
+                "track": 74,
+                "name": "TBT-56-2of3-Nahuatl.mp3",
+                "duration": "1:09",
+                "file": "TBT-56-2of3-Nahuatl"
+            }, {
+                "track": 75,
+                "name": "TBT-56-3of3-Nahuatl.mp3",
+                "duration": "0:57",
+                "file": "TBT-56-3of3-Nahuatl"
+            }, {
+                "track": 76,
+                "name": "TBT-56-Nahuatl_three.mp3",
+                "duration": "2:54",
+                "file": "TBT-56-Nahuatl_three"
+            }, {
+                "track": 77,
+                "name": "TBT-57-Nahuatl.mp3",
+                "duration": "1:02",
+                "file": "TBT-57-Nahuatl"
+            }, {
+                "track": 78,
+                "name": "TBT-58-Nahuatl.mp3",
+                "duration": "1:46",
+                "file": "TBT-58-Nahuatl"
+            }, {
+                "track": 79,
+                "name": "TBT-59-Nahuatl.mp3",
+                "duration": "0:27",
+                "file": "TBT-59-Nahuatl"
+            }, {
+                "track": 80,
+                "name": "TBT-60-Nahuatl.mp3",
+                "duration": "1:03",
+                "file": "TBT-60-Nahuatl"
+            }, {
+                "track": 81,
+                "name": "TBT-61-Nahuatl.mp3",
+                "duration": "0:55",
+                "file": "TBT-61-Nahuatl"
+            }, {
+                "track": 82,
+                "name": "TBT-62-1of2-Nahuatl_2.mp3",
+                "duration": "2:14",
+                "file": "TBT-62-1of2-Nahuatl_2"
+            }, {
+                "track": 83,
+                "name": "TBT-62-1of2-Nahuatl.mp3",
+                "duration": "1:09",
+                "file": "TBT-62-1of2-Nahuatl"
+            }, {
+                "track": 84,
+                "name": "TBT-62-2of2-Nahuatl.mp3",
+                "duration": "1:05",
+                "file": "TBT-62-2of2-Nahuatl"
+            }, {
+                "track": 85,
+                "name": "TBT-63-1of2-Nahuatl_1.mp3",
+                "duration": "1:03",
+                "file": "TBT-63-1of2-Nahuatl_1"
+            }, {
+                "track": 86,
+                "name": "TBT-63-1of2-Nahuatl.mp3",
+                "duration": "0:38",
+                "file": "TBT-63-1of2-Nahuatl"
+            }, {
+                "track": 87,
+                "name": "TBT-63-2of2-Nahuatl.mp3",
+                "duration": "0:51",
+                "file": "TBT-63-2of2-Nahuatl"
+            }, {
+                "track": 88,
+                "name": "TBT-63-Nahuatl_both.mp3",
+                "duration": "1:30",
+                "file": "TBT-63-Nahuatl_both"
+            }, {
+                "track": 89,
+                "name": "TBT-64-Nahuatl.mp3",
+                "duration": "0:51",
+                "file": "TBT-64-Nahuatl"
+            }, {
+                "track": 90,
+                "name": "TBT-65-Nahuatl.mp3",
+                "duration": "1:02",
+                "file": "TBT-65-Nahuatl"
+            }, {
+                "track": 91,
+                "name": "TBT-66-Nahuatl.mp3",
+                "duration": "1:08",
+                "file": "TBT-66-Nahuatl"
+            }, {
+                "track": 92,
+                "name": "TBT-67-Nahuatl.mp3",
+                "duration": "0:47",
+                "file": "TBT-67-Nahuatl"
+            }, {
+                "track": 93,
+                "name": "TBT-69-Nahuatl.mp3",
+                "duration": "0:28",
+                "file": "TBT-69-Nahuatl"
+            }, {
+                "track": 94,
+                "name": "TBT-70-1of2-Nahuatl_both.mp3",
+                "duration": "1:05",
+                "file": "TBT-70-1of2-Nahuatl_both"
+            }, {
+                "track": 95,
+                "name": "TBT-70-1of2-Nahuatl.mp3",
+                "duration": "0:35",
+                "file": "TBT-70-1of2-Nahuatl"
+            }, {
+                "track": 96,
+                "name": "TBT-70-2of2-Nahuatl.mp3",
+                "duration": "0:29",
+                "file": "TBT-70-2of2-Nahuatl"
+            }, {
+                "track": 97,
+                "name": "TBT-71-Nahuatl.mp3",
+                "duration": "5:05",
+                "file": "TBT-71-Nahuatl"
+            }, {
+                "track": 98,
+                "name": "TBT-SOUNDSCAPE_OG.mp3",
+                "duration": "1:07",
+                "file": "TBT-SOUNDSCAPE_OG"
+            }],
+            buildPlaylist = $.each(tracks, function(key, value) {
+                var trackNumber = value.track,
+                    trackName = value.name,
+                    trackDuration = value.duration;
+                if (trackNumber.toString().length === 1) {
+                    trackNumber = '0' + trackNumber;
+                }
+                $('#plList').append('<li> \
+                    <div class="plItem"> \
+                        <span class="plNum">' + trackNumber + '.</span> \
+                        <span class="plTitle">' + trackName + '</span> \
+                        <span class="plLength">' + trackDuration + '</span> \
+                    </div> \
+                </li>');
+            }),
+            trackCount = tracks.length,
+            npAction = $('#npAction'),
+						npTitle = $('#npTitle'),
+            audio = $('#audio1').on('play', function () {
+                playing = true;
+                npAction.text('Now Playing:' + ' ');
+            }).on('pause', function () {
+                playing = false;
+                npAction.text('Paused...');
+            }).on('ended', function () {
+                npAction.text('Paused...');
+                if ((index + 1) < trackCount) {
+                    index++;
+                    loadTrack(index);
+                    audio.play();
+                } else {
+                    audio.pause();
+                    index = 0;
+                    loadTrack(index);
+                }
+            }).get(0),
+
+            btnPrev = $('#btnPrev').on('click', function () {
+                if ((index - 1) > -1) {
+                    index--;
+                    loadTrack(index);
+                    if (playing) {
+                        audio.play();
+                    }
+                } else {
+                    audio.pause();
+                    index = 0;
+                    loadTrack(index);
+                }
+            }),
+            btnNext = $('#btnNext').on('click', function () {
+                if ((index + 1) < trackCount) {
+                    index++;
+                    loadTrack(index);
+                    if (playing) {
+                        audio.play();
+                    }
+                } else {
+                    audio.pause();
+                    index = 0;
+                    loadTrack(index);
+                }
+            }),
+            li = $('#plList li').on('click', function () {
+                var id = parseInt($(this).index());
+                if (id !== index) {
+                    playTrack(id);
+                }
+            }),
+            loadTrack = function (id) {
+                $('.plSel').removeClass('plSel');
+                $('#plList li:eq(' + id + ')').addClass('plSel');
+                npTitle.text(tracks[id].name);
+                index = id;
+                audio.src = mediaPath + tracks[id].file + extension;
+                updateDownload(id, audio.src);
+            },
+            updateDownload = function (id, source) {
+                player.on('loadedmetadata', function () {
+                    $('a[data-plyr="download"]').attr('href', source);
+                });
+            },
+            playTrack = function (id) {
+                loadTrack(id);
+                audio.play();
+            };
+        extension = audio.canPlayType('audio/mpeg') ? '.mp3' : audio.canPlayType('audio/ogg') ? '.ogg' : '';
+        loadTrack(index);
+    } else {
+        // no audio support
+        $('.column').addClass('hidden');
+        var noSupport = $('#audio1').text();
+        $('.container').append('<p class="no-support">' + noSupport + '</p>');
+    }
+		$('#playlistclose').click(function(e){
+				$('.playlist').fadeOut(1000);
+					playing = false;
+					audio.pause();
+					npAction.text('Paused...');
+		});
+});
+</script>
+</body>
+</html>
