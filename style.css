@@ -56,14 +56,14 @@ a,a:visited,a:active {
 	overflow:hidden;
 }
 #window {
-	margin:5vh auto;
+	margin:0;
 	left:0;
 	right:0;
 	background-color:#fff;
 	max-width:1450px;
-	width:80vw;
-	min-width:600px;
-	height:90vh;
+	min-width:0px;
+	width:calc(100vw - 12px);
+	height:calc(100vh - 12px);
 	border:black solid 6px;
 	z-index:1000;
 	position:absolute;
@@ -148,12 +148,8 @@ a,a:visited,a:active {
 }
 .directionbox {
 	clear:both;
-	margin:15px 2.5%;
 	font-size:1.2em;
 	display:block;
-	width:calc(95% - 46px);
-	height:100px;
-	padding:20px;
 	border:3px dashed #000;
   color:red;
 	display:none;
@@ -163,6 +159,11 @@ a,a:visited,a:active {
 	-moz-user-select:none;
 	-ms-user-select:none;
 	user-select:none;
+	height:auto;
+	min-height:110px;
+	width:calc(100% - 50px);
+	margin:15px 0px 15px 10px;
+	padding:10px;
 }
 #routehere {
 	width:100%;
@@ -170,19 +171,19 @@ a,a:visited,a:active {
 	scroll-behavior:smooth;
 }
 .continueroute {
-	float:left;
 	background-color:#fff;
 	border:3px #000 solid;
 	border-radius:10px;
 	padding:10px;
 	display:block;
 	margin-right:20px;
-	margin-top:20px;
 	font-family:pix;
 	font-size:1.1em;
 	text-align:center;
 	cursor:pointer;
 	transition:1s;
+	float:none;
+	margin-top:10px;
 }
 .continueroute:hover {
 	background-color:black;
@@ -227,8 +228,8 @@ a,a:visited,a:active {
 	width:80px;
 	text-align:left;
 	padding-top:.2em;
-	font-size:.9em;
 	line-height:.8em;
+	font-size:14px;
 }
 .pulse {
 	animation-name:pulser;
@@ -262,8 +263,8 @@ a,a:visited,a:active {
 }
 .icon {
 	float:left;
-	width:100px;
-	height:100px;
+	width:75px;
+	height:75px;
 	margin-left:30px;
 	margin-top:30px;
 	margin-bottom:25px;
@@ -297,34 +298,36 @@ a,a:visited,a:active {
 }
 .alert p {
 	padding:20px;
+	padding-top:0;
+	padding-bottom:0;
 }
 .playlist {
 	position:absolute;
-	width:calc(100% - 66px);
-	margin:60px 30px 30px 30px;
+	width:calc(100% - 26px);
+	margin:40px 10px 10px 10px;
+	height: calc(100% - 56px);
 	top:0;
 	left:0;
-	height:calc(100% - 96px);
 	border:3px solid black;
 	display:none;
 }
 .files {
 	position:absolute;
-	width:calc(100% - 66px);
-	margin:60px 30px 30px 30px;
+	width:calc(100% - 26px);
+	margin:40px 10px 10px 10px;
+	height: calc(100% - 56px);
 	top:0;
 	left:0;
-	height:calc(100% - 96px);
 	border:3px solid black;
 	display:none;
 }
 .routes {
 	position:absolute;
-	width:calc(100% - 66px);
-	margin:60px 30px 30px 30px;
+	width:calc(100% - 26px);
+	margin:40px 10px 10px 10px;
+	height: calc(100% - 56px);
 	top:0;
 	left:0;
-	height:calc(100% - 96px);
 	border:3px solid black;
 	display:none;
 }
@@ -421,36 +424,37 @@ a.plyr__controls__item.plyr__control:hover,.plyr--audio .plyr__controls button:h
 }
 .about {
 	position:absolute;
-	width:calc(100% - 66px);
-	margin:60px 30px 30px 30px;
+	width:calc(100% - 26px);
+	margin:40px 10px 10px 10px;
+	height: calc(100% - 56px);
 	top:0;
 	left:0;
-	height:calc(100% - 96px);
 	border:3px solid black;
 	display:none;
 }
 .abouttext {
 	height:97%;
-	width:94%;
 	margin-left:3%;
 	margin-top:3%;
 	padding-bottom:100px;
 	overflow-y:scroll;
+	width:91%;
+	padding-right:3%;
 }
 .abouttext img {
-	width:85%;
 	margin-left:auto;
 	margin-right:auto;
 	max-width:550px;
 	display:block;
+	width:100%;
 }
 .poems {
 	position:absolute;
-	width:calc(100% - 66px);
-	margin:60px 30px 30px 30px;
+	width:calc(100% - 26px);
+	margin:40px 10px 10px 10px;
+	height: calc(100% - 56px);
 	top:0;
 	left:0;
-	height:calc(100% - 96px);
 	border:3px solid black;
 	display:none;
 }
@@ -531,11 +535,11 @@ a.plyr__controls__item.plyr__control:hover,.plyr--audio .plyr__controls button:h
 }
 .explore {
 	position:absolute;
-	width:calc(100% - 66px);
-	margin:60px 30px 30px 30px;
+	width:calc(100% - 26px);
+	margin:40px 10px 10px 10px;
+	height: calc(100% - 56px);
 	top:0;
 	left:0;
-	height:calc(100% - 96px);
 	border:3px solid black;
 	display: none;
 }
@@ -823,61 +827,4 @@ a.plyr__controls__item.plyr__control:hover,.plyr--audio .plyr__controls button:h
 .plyr__controls .plyr__controls__item.plyr__time {
 	font-size:14px;
 	margin-left: 7px;
-}
-/* Media Queries================================================== */
-@media only screen and (max-width:1100px) {
-	#window {
-		margin:0;
-		left:0;
-		right:0;
-		background-color:#fff;
-		max-width:1450px;
-		min-width:0px;
-		width:calc(100vw - 12px);
-		height:calc(100vh - 12px);
-		border:black solid 6px;
-		z-index:1000;
-		position:absolute;
-		display:none;
-	}
-	.alert p {
-		padding-top:0;
-		padding-bottom:0;
-	}
-	.icon {
-		width:75px;
-		height:75px;
-	}
-	.directionbox {
-		height:auto;
-		min-height:110px;
-    width:calc(100% - 50px);
-		margin:15px 0px 15px 10px;
-		padding:10px;
-	}
-	.continueroute {
-		float:none;
-		margin-top:10px;
-	}
-	.blinkhere {
-		width:75px;
-		height:75px;
-	}
-	.blinkhere div {
-		margin-top:80px;
-		width:80px;
-		font-size:14px;
-	}
-	.abouttext {
-		width:91%;
-		padding-right:3%;
-	}
-	.abouttext img {
-		width:100%;
-	}
-	.routes,.explore,.about,.poems,.files,.playlist {
-			width:calc(100% - 26px);
-			margin:40px 10px 10px 10px;
-			height: calc(100% - 56px);
-	}
 }
