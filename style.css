@@ -56,7 +56,7 @@ a,a:visited,a:active {
 	overflow:hidden;
 }
 #window {
-	margin:0;
+	margin:0 auto;
 	left:0;
 	right:0;
 	background-color:#fff;
